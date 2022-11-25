@@ -2,8 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 
-export default function Footer() {
-  // TODO: Update Footer page
+export default function About() {
+  // TODO: Update About page
   return (
     <Box
       sx={{
@@ -12,7 +12,7 @@ export default function Footer() {
         textAlign: "center",
       }}
     >
-      <Typography variant="h1">{"Footer"}</Typography>
+      <Typography variant="h1">{"About"}</Typography>
     </Box>
   );
 }
