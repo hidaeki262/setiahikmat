@@ -1,24 +1,28 @@
 import * as React from "react";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { PageHref } from "../../constants";
+import { Label, PageHref } from "../../constants";
 
 const options = [
   {
-    title: "Home",
-    location: PageHref.HOME,
+    title: Label.APP_BAR_LABEL.HOME,
+    location: PageHref.PAGE_HREF.HOME,
+    id: PageHref.PAGE_ID.HOME,
   },
   {
-    title: "About",
-    location: PageHref.ABOUT,
+    title: Label.APP_BAR_LABEL.ABOUT,
+    location: PageHref.PAGE_HREF.ABOUT,
+    id: PageHref.PAGE_ID.ABOUT,
   },
   {
-    title: "Prodcuts",
-    location: PageHref.PRODUCTS,
+    title: Label.APP_BAR_LABEL.PRODUCTS,
+    location: PageHref.PAGE_HREF.PRODUCTS,
+    id: PageHref.PAGE_ID.PRODUCTS,
   },
   {
-    title: "Contact",
-    location: PageHref.CONTACT,
+    title: Label.APP_BAR_LABEL.CONTACT,
+    location: PageHref.PAGE_HREF.CONTACT,
+    id: PageHref.PAGE_ID.CONTACT,
   },
 ];
 
@@ -38,7 +42,6 @@ export default function Drawer() {
   const handleMenuItemClick = (event, index, location) => {
     setSelectedIndex(index);
     setAnchorEl(null);
-    window.location.href = location;
   };
 
   const handleClose = () => {
@@ -81,6 +84,7 @@ export default function Drawer() {
       >
         {options.map((option, index) => (
           <MenuItem
+            href={option.location}
             key={index}
             selected={index === selectedIndex}
             onClick={(event) =>

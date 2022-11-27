@@ -1,12 +1,15 @@
-import { APP_BAR } from "./ButtonLabel";
-import { PAGE_HREF } from "./PageHREF";
+import { APP_BAR_LABEL, FORM_LABEL, INPUT_LABEL } from "./Label";
+import { PAGE_HREF, PAGE_ID } from "./PageHREF";
 
-const ButtonLabel = {
-  ...APP_BAR,
+const Label = {
+  APP_BAR_LABEL,
+  FORM_LABEL,
+  INPUT_LABEL,
 };
 
 const PageHref = {
-  ...PAGE_HREF,
+  PAGE_HREF,
+  PAGE_ID,
 };
 
-export { ButtonLabel, PageHref };
+export { Label, PageHref };
