@@ -17,6 +17,7 @@ export default function BasicButton({
   href,
   color = "primary",
   onClick,
+  variant = "text",
   ...props
 }) {
   return (
@@ -24,7 +25,7 @@ export default function BasicButton({
       <Button
         color={color}
         onClick={onClick}
-        variant="text"
+        variant={variant}
         href={href}
         {...props}
       >
