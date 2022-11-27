@@ -13,3 +13,4 @@ React Web for Setia Hikmat
 - [ ] CARDS COMPONENT
 - [ ] DETAILS COMPONENT
 - [ ] NAVIGATION
+- [ ] EMAIL
