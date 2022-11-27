@@ -3,10 +3,11 @@
 React Web for Setia Hikmat
 
 # TODO:
-- [ ] HEADER
+
+- [x] HEADER
 - [ ] FOOTER
 - [x] GOOGLE MAP
-- [ ] CONTACT FORM
+- [x] CONTACT FORM
 - [ ] CAROUSEL
 - [ ] PRODUCT COMPONENT
 - [ ] CARDS COMPONENT
