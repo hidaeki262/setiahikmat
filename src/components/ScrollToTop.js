@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -24,7 +25,7 @@ function ScrollTop(props) {
     if (anchor) {
       anchor.scrollIntoView({
         block: "center",
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -34,7 +35,7 @@ function ScrollTop(props) {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        sx={{ position: "fixed", bottom: 32, right: 32, color: "#D9593D" }}
       >
         {children}
       </Box>
@@ -45,8 +46,25 @@ function ScrollTop(props) {
 export default function ScrollToTop(props) {
   return (
     <ScrollTop {...props}>
-      <Fab size="large" aria-label="scroll back to top">
-        <KeyboardArrowUpIcon />
+      <Fab
+        size="64px"
+        aria-label="scroll back to top"
+        sx={{
+          bgcolor: "#D9593D",
+          borderRadius: "16px",
+          width: "64px",
+          height: "64px",
+          paddingTop: "14px",
+          transition: "0.5s",
+          alignItems: "flex-start",
+          color: "#FFFFFF",
+          "&:hover": {
+            bgcolor: "#D9593D",
+            paddingTop: "6px",
+          },
+        }}
+      >
+        <ArrowUpwardIcon sx={{height: "48px", width: "48px"}} />
       </Fab>
     </ScrollTop>
   );
