@@ -35,7 +35,7 @@ function ScrollTop(props) {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: "fixed", bottom: 32, right: 32, color: "#D9593D" }}
+        sx={{ position: "fixed", bottom: "3vw", right: "3vw", color: "#D9593D" }}
       >
         {children}
       </Box>
@@ -47,24 +47,23 @@ export default function ScrollToTop(props) {
   return (
     <ScrollTop {...props}>
       <Fab
-        size="64px"
         aria-label="scroll back to top"
         sx={{
           bgcolor: "#D9593D",
-          borderRadius: "16px",
-          width: "64px",
-          height: "64px",
-          paddingTop: "14px",
-          transition: "0.5s",
+          borderRadius: "2vh",
+          width: "7vh",
+          height: "7vh",
+          paddingTop: "1.7vh",
+          transition: "0.3s",
           alignItems: "flex-start",
           color: "#FFFFFF",
           "&:hover": {
             bgcolor: "#D9593D",
-            paddingTop: "6px",
+            paddingTop: "0.8vh",
           },
         }}
       >
-        <ArrowUpwardIcon sx={{height: "48px", width: "48px"}} />
+        <ArrowUpwardIcon sx={{height: "5vh", width: "5vh"}} />
       </Fab>
     </ScrollTop>
   );
