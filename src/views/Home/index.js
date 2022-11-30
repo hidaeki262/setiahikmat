@@ -12,8 +12,7 @@ export default function Home() {
     <Box
       id="Home"
       sx={{
-        height: 0.8,
-        paddingLeft: "6vw",
+        textAlign: "center",
       }}
     >
       <Typography variant="h1" fontSize={"4.5vw"} sx={{ width: 2 / 3, color: Colour.RED }}>

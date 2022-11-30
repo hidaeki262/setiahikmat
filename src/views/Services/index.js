@@ -7,8 +7,6 @@ export default function Services() {
   return (
     <Box
       sx={{
-        height: 300,
-        backgroundColor: "primary.dark",
         textAlign: "center",
       }}
       id="Services"
