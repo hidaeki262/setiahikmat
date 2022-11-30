@@ -1,19 +1,24 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
+import { Colour } from "../../constants/Colour";
 
 export default function Home() {
-  // TODO: Update Contact page
+  const labels = {
+    titleMsg: "We Provide Architectural Design and Construction",
+  };
+
   return (
     <Box
-      sx={{
-        height: 300,
-        backgroundColor: "primary.dark",
-        textAlign: "center",
-      }}
       id="Home"
+      sx={{
+        height: 0.8,
+        paddingLeft: "6vw",
+      }}
     >
-      <Typography variant="h1">{"Home"}</Typography>
+      <Typography variant="h1" fontSize={"4.5vw"} sx={{ width: 2 / 3, color: Colour.RED }}>
+        {labels.titleMsg}
+      </Typography>
     </Box>
   );
 }

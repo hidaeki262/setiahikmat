@@ -2,9 +2,9 @@ import * as React from "react";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { Colour } from "../constants/Colour";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -35,7 +35,11 @@ function ScrollTop(props) {
       <Box
         onClick={handleClick}
         role="presentation"
-        sx={{ position: "fixed", bottom: "3vw", right: "3vw", color: "#D9593D" }}
+        sx={{
+          position: "fixed",
+          bottom: "3vw",
+          right: "3vw",
+        }}
       >
         {children}
       </Box>
@@ -49,21 +53,21 @@ export default function ScrollToTop(props) {
       <Fab
         aria-label="scroll back to top"
         sx={{
-          bgcolor: "#D9593D",
+          bgcolor: Colour.ORANGE,
           borderRadius: "2vh",
           width: "7vh",
           height: "7vh",
           paddingTop: "1.7vh",
           transition: "0.3s",
           alignItems: "flex-start",
-          color: "#FFFFFF",
+          color: Colour.WHITE,
           "&:hover": {
-            bgcolor: "#D9593D",
+            bgcolor: Colour.ORANGE,
             paddingTop: "0.8vh",
           },
         }}
       >
-        <ArrowUpwardIcon sx={{height: "5vh", width: "5vh"}} />
+        <ArrowUpwardIcon sx={{ height: "5vh", width: "5vh" }} />
       </Fab>
     </ScrollTop>
   );
