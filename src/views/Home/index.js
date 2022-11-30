@@ -7,8 +7,6 @@ export default function Home() {
   return (
     <Box
       sx={{
-        height: 300,
-        backgroundColor: "primary.dark",
         textAlign: "center",
       }}
       id="Home"

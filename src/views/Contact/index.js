@@ -90,12 +90,7 @@ export default function Contact() {
   // TODO: Update Contact page
 
   return (
-    <Box
-      id={PageHref.PAGE_ID.CONTACT}
-      sx={{
-        height: 300,
-      }}
-    >
+    <Box id={PageHref.PAGE_ID.CONTACT} sx={{}}>
       <Container>
         <Grid container>
           <Grid xs={12} md={6} item>
