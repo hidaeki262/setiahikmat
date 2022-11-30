@@ -8,7 +8,7 @@ function App() {
   // TODO: Add pages
   return (
     <React.Fragment>
-      <Box sx={{ height: "100vh", paddingTop: 7, paddingBottom: 7 }}>
+      <Box sx={{ height: "100vh" }}>
         <Toolbar id="back-to-top-anchor" />
         <Header />
         <Home />

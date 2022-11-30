@@ -12,7 +12,6 @@ export default function Header() {
   return (
     <Box
       sx={{
-        height: 150,
         maxHeight: 150,
         alignItems: "center",
       }}
