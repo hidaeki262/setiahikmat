@@ -1,4 +1,4 @@
 const construction_worker = require("./construction_worker.jpeg");
-const contactLogo = require("./SETIA_HIKMAT_LOGO.png");
+const companyNameLogo = require("./company_name_logo.png");
 
-export { construction_worker, contactLogo };
+export { construction_worker, companyNameLogo };

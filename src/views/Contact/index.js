@@ -6,7 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { Label, PageHref } from "../../constants";
-import { contactLogo } from "../../assets";
+import { companyNameLogo } from "../../assets";
 import AddressMap from "../../components/Map";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -48,7 +48,7 @@ export default function Contact() {
                 height: matchesMD ? 120 : matchesSM ? 100 : 80,
               }}
               alt="Contact Logo"
-              src={contactLogo}
+              src={companyNameLogo}
             />
           </Grid>
           <Grid container item>
