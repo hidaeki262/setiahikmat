@@ -3,54 +3,60 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import { Colour } from "../../constants/Colour";
+import { Container } from "@mui/system";
+import { homeBg } from "../../assets/index";
 
 export default function Home() {
   const labels = {
     titleMsg: "We Provide Architectural Design and Construction",
     contentMsg:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna",
+      "A firm specialising in construction, architectural design services and raw material providers",
   };
 
   return (
     <Box
-      id="Home"
       sx={{
-        height: 0.85,
-        paddingLeft: "10vw",
-        paddingTop: "3vw",
+        backgroundImage: `url(${homeBg})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
-      <Grid
-        container
-        sx={{ height: "100%", alignItems: "center" }}
-        rowSpacing={1}
-      >
-        <Typography
-          variant="h1"
-          fontSize={42}
-          sx={{ width: 3 / 5, color: Colour.RED }}
-        >
-          {labels.titleMsg}
-        </Typography>
-        <Typography
-          variant="body1"
-          fontSize={16}
-          sx={{ width: 3 / 5, color: Colour.DARKGREY }}
-        >
-          {labels.contentMsg}
-        </Typography>
-        <Grid container sx={{ width: 3 / 5, textAlign: "center" }}>
-          <Grid item xs={4} sx={{ bgcolor: "red" }}>
-            1
+      <Container>
+        <Grid container rowSpacing={15} columnSpacing={5}>
+          <Grid xs={12} item />
+          <Grid xs={12} item>
+            <Typography
+              sx={{
+                font: "normal normal 600 60px/82px Open Sans",
+                "@media (max-width:768px)": {
+                  font: "normal normal 600 32px/43px Open Sans",
+                },
+                width: 3.5/ 5,
+                color: Colour.RED,
+                letterSpacing: 0,
+              }}
+            >
+              {labels.titleMsg}
+            </Typography>
           </Grid>
-          <Grid item xs={4} sx={{ bgcolor: "green" }}>
-            2
+          <Grid xs={12} item>
+            <Typography
+              sx={{
+                width: 3 / 5,
+                font: "normal normal 600 34px/46px Open Sans",
+                "@media (max-width:768px)": {
+                  font: "normal normal 600 16px/22px Open Sans",
+                },
+                color: Colour.DARKGREY,
+              }}
+            >
+              {labels.contentMsg}
+            </Typography>
           </Grid>
-          <Grid item xs={4} sx={{ bgcolor: "black" }}>
-            3
-          </Grid>
+          <Grid xs={12} item />
         </Grid>
-      </Grid>
+      </Container>
     </Box>
   );
 }
