@@ -4,7 +4,7 @@ import { HoverComponent } from "../../components";
 
 export const Title = ({ title }) => {
   return (
-    <HoverComponent>
+    <HoverComponent width="250px">
       <Typography
         sx={{
           font: "normal normal 600 48px/65px Open Sans",

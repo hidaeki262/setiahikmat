@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import * as React from "react";
+import { companyIcon } from "../../assets";
 
 export const Logo = () => {
   const onNavigate = () => {
@@ -12,11 +13,10 @@ export const Logo = () => {
       component="img"
       sx={{
         height: 78,
-        width: 200,
         cursor: "pointer",
       }}
       alt="Company logo"
-      src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
+      src={companyIcon}
       onClick={onNavigate}
     />
   );

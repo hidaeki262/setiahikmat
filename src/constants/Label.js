@@ -6,7 +6,7 @@ export const APP_BAR_LABEL = {
 };
 
 export const FORM_LABEL = {
-  SUBMIT: "Submit",
+  SUBMIT: "Send Your Message",
 };
 
 export const INPUT_LABEL = {

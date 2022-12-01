@@ -8,7 +8,6 @@ import { BasicButton } from "../../components";
 import Drawer from "./Drawer";
 
 export default function Header() {
-  // TODO: Update Header page
   return (
     <Box
       sx={{
@@ -35,18 +34,34 @@ export default function Header() {
                 spacing={5}
               >
                 <BasicButton
+                  sx={{
+                    font: "normal normal 600 20px/27px Open Sans",
+                    color: "#333333",
+                  }}
                   href={PageHref.PAGE_HREF.HOME}
                   label={Label.APP_BAR_LABEL.HOME}
                 />
                 <BasicButton
+                  sx={{
+                    font: "normal normal 600 20px/27px Open Sans",
+                    color: "#333333",
+                  }}
                   href={PageHref.PAGE_HREF.ABOUT}
                   label={Label.APP_BAR_LABEL.ABOUT}
                 />
                 <BasicButton
+                  sx={{
+                    font: "normal normal 600 20px/27px Open Sans",
+                    color: "#333333",
+                  }}
                   href={PageHref.PAGE_HREF.PRODUCTS}
                   label={Label.APP_BAR_LABEL.PRODUCTS}
                 />
                 <BasicButton
+                  sx={{
+                    font: "normal normal 600 20px/27px Open Sans",
+                    color: "#333333",
+                  }}
                   href={PageHref.PAGE_HREF.CONTACT}
                   label={Label.APP_BAR_LABEL.CONTACT}
                 />
