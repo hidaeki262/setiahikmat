@@ -1,21 +1,42 @@
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 const AddressMap = () => {
+  const theme = useTheme();
+  const mobileS = useMediaQuery(theme.breakpoints.between("320", "375"));
+  const mobileM = useMediaQuery(theme.breakpoints.between("375", "425"));
+  const mobileL = useMediaQuery(theme.breakpoints.between("425", "768"));
+  const matchesSM = useMediaQuery(theme.breakpoints.only("sm"));
+  const matchesMD = useMediaQuery(theme.breakpoints.only("md"));
+
   const src = "https://www.google.com/maps/embed/v1/place?key=";
   const API_KEY = "AIzaSyDq4V7lU-EBoTtCIytlUXPzINPfQKNFUM0";
   const area = "&q=Diamond%20Square%2C%20Jalan%20Semarak%20API%202";
+
   return (
-    <div className="google-map-code">
-      <iframe
-        src={src + API_KEY + area}
-        width="100%"
-        height="450"
-        frameborder="0"
-        style={{ border: 0 }}
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-      ></iframe>
-    </div>
+    <iframe
+      src={src + API_KEY + area}
+      width={
+        matchesMD
+          ? "400"
+          : matchesSM
+          ? "300"
+          : mobileS
+          ? "280"
+          : mobileM
+          ? "320"
+          : mobileL
+          ? "380"
+          : "500"
+      }
+      height={"200"}
+      frameborder="0"
+      style={{ border: 0, boxShadow: "0px 3px 6px #00000029" }}
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0"
+    ></iframe>
   );
 };
 export default AddressMap;

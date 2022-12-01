@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IconButton, Menu, MenuItem } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Label, PageHref } from "../../constants";
 
 const options = [
@@ -68,9 +68,10 @@ export default function Drawer() {
             xs: "block",
             md: "none",
           },
+          color: "#D9593D",
         }}
       >
-        <MenuIcon />
+        <MenuRoundedIcon />
       </IconButton>
       <Menu
         id="lock-menu"
