@@ -8,7 +8,6 @@ import { BasicButton } from "../../components";
 import Drawer from "./Drawer";
 
 export default function Header() {
-  // TODO: Update Header page
   return (
     <Box
       sx={{
