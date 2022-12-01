@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import * as React from "react";
-import { companyNameLogo } from "../../assets";
+import { companyIcon } from "../../assets";
 
 export const Logo = () => {
   const onNavigate = () => {
@@ -16,7 +16,7 @@ export const Logo = () => {
         cursor: "pointer",
       }}
       alt="Company logo"
-      src={companyNameLogo}
+      src={companyIcon}
       onClick={onNavigate}
     />
   );

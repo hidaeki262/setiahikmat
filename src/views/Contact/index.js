@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Container, Grid, Typography } from "@mui/material";
-import { BasicButton, Input } from "../../components";
+import { BasicButton, HoverComponent, Input } from "../../components";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -31,9 +31,11 @@ export default function Contact() {
       : "normal normal 600 48px/65px Open Sans";
 
     return (
-      <Typography sx={{ font: fontStyles }} color={"#A12814"}>
-        {label.title}
-      </Typography>
+      <HoverComponent width="550px">
+        <Typography sx={{ font: fontStyles }} color={"#A12814"}>
+          {label.title}
+        </Typography>
+      </HoverComponent>
     );
   };
 
