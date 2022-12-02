@@ -8,8 +8,8 @@ function App() {
   // TODO: Add pages
   return (
     <React.Fragment>
-      <Box sx={{ height: "100vh" }}>
-        <Toolbar id="back-to-top-anchor" />
+      <Box >
+        {/* <Toolbar id="back-to-top-anchor" /> */}
         <Header />
         <Home />
         <Services />

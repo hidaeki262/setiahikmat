@@ -17,44 +17,46 @@ export default function Home() {
     <Box
       sx={{
         backgroundImage: `url(${homeBg})`,
-        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundPosition: "50% 80%",
         backgroundSize: "cover",
       }}
     >
       <Container>
-        <Grid container rowSpacing={15} columnSpacing={5}>
-          <Grid xs={12} item />
-          <Grid xs={12} item>
-            <Typography
-              sx={{
-                font: "normal normal 600 60px/82px Open Sans",
-                "@media (max-width:768px)": {
-                  font: "normal normal 600 32px/43px Open Sans",
-                },
-                width: 3.5/ 5,
-                color: Colour.RED,
-                letterSpacing: 0,
-              }}
-            >
-              {labels.titleMsg}
-            </Typography>
+        <Grid container>
+          <Grid container rowSpacing={12} >
+            <Grid xs={12} item />
+            <Grid xs={12} item>
+              <Typography
+                sx={{
+                  font: "normal normal 600 60px/82px Open Sans",
+                  "@media (max-width:768px)": {
+                    font: "normal normal 600 32px/43px Open Sans",
+                  },
+                  width: 3.5 / 5,
+                  color: Colour.RED,
+                  letterSpacing: 0,
+                }}
+              >
+                {labels.titleMsg}
+              </Typography>
+            </Grid>
+            <Grid xs={12} item>
+              <Typography
+                sx={{
+                  width: 3 / 5,
+                  font: "normal normal 600 34px/46px Open Sans",
+                  "@media (max-width:768px)": {
+                    font: "normal normal 600 16px/22px Open Sans",
+                  },
+                  color: Colour.DARKGREY,
+                }}
+              >
+                {labels.contentMsg}
+              </Typography>
+            </Grid>
+            <Grid xs={12} item />
           </Grid>
-          <Grid xs={12} item>
-            <Typography
-              sx={{
-                width: 3 / 5,
-                font: "normal normal 600 34px/46px Open Sans",
-                "@media (max-width:768px)": {
-                  font: "normal normal 600 16px/22px Open Sans",
-                },
-                color: Colour.DARKGREY,
-              }}
-            >
-              {labels.contentMsg}
-            </Typography>
-          </Grid>
-          <Grid xs={12} item />
         </Grid>
       </Container>
     </Box>

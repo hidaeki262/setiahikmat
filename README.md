@@ -8,7 +8,7 @@ React Web for Setia Hikmat
 - [x] GOOGLE MAP
 - [x] ABOUT PAGE
 - [x] CONTACT FORM
-- [ ] HOME PAGE
+- [x] HOME PAGE
 - [ ] SERVICES PAGE
 - [ ] NAVIGATION
 - [ ] EMAIL
