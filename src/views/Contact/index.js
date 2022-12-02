@@ -33,7 +33,7 @@ export default function Contact() {
       : "normal normal 600 48px/65px Open Sans";
 
     return (
-      <HoverComponent width="550px">
+      <HoverComponent width="580px">
         <Typography sx={{ font: fontStyles }} color={"#A12814"}>
           {label.title}
         </Typography>
