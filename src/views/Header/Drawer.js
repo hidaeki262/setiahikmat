@@ -10,14 +10,14 @@ const options = [
     id: PageHref.PAGE_ID.HOME,
   },
   {
-    title: Label.APP_BAR_LABEL.ABOUT,
-    location: PageHref.PAGE_HREF.ABOUT,
-    id: PageHref.PAGE_ID.ABOUT,
-  },
-  {
     title: Label.APP_BAR_LABEL.PRODUCTS,
     location: PageHref.PAGE_HREF.PRODUCTS,
     id: PageHref.PAGE_ID.PRODUCTS,
+  },
+  {
+    title: Label.APP_BAR_LABEL.ABOUT,
+    location: PageHref.PAGE_HREF.ABOUT,
+    id: PageHref.PAGE_ID.ABOUT,
   },
   {
     title: Label.APP_BAR_LABEL.CONTACT,
