@@ -5,6 +5,18 @@ import Fab from "@mui/material/Fab";
 import Fade from "@mui/material/Fade";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Colour } from "../constants/Colour";
+import { PageHref } from "../constants";
+
+export const scrollToHref = (event, href) => {
+  const anchor = (event.target.ownerDocument || document).querySelector(href);
+
+  if (anchor) {
+    anchor.scrollIntoView({
+      block: "center",
+      behavior: "smooth",
+    });
+  }
+};
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -17,17 +29,8 @@ function ScrollTop(props) {
     threshold: 100,
   });
 
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      "#"
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: "center",
-        behavior: "smooth",
-      });
-    }
+  const handleClick = (event, href) => {
+    scrollToHref(event, PageHref.PAGE_HREF.HOME);
   };
 
   return (

@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import { Colour } from "../../constants/Colour";
 import { Container } from "@mui/system";
 import { homeBg } from "../../assets/index";
+import { PageHref } from "../../constants";
 
 export default function Home() {
   const labels = {
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <Box
+      id={PageHref.PAGE_ID.HOME}
       sx={{
         backgroundImage: `url(${homeBg})`,
         backgroundRepeat: "no-repeat",
@@ -25,6 +27,7 @@ export default function Home() {
       <Container>
         <Grid container>
           <Grid container rowSpacing={12} >
+            <Grid xs={12} item />
             <Grid xs={12} item />
             <Grid xs={12} item>
               <Typography

@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import { Container, Grid } from "@mui/material";
 import { Title } from "../About/Title";
 import { Details } from "../About/Details";
+import { PageHref } from "../../constants";
 
 export default function About() {
   const label = {
@@ -17,7 +18,7 @@ export default function About() {
   );
 
   return (
-    <Box>
+    <Box id={PageHref.PAGE_ID.PRODUCTS}>
       <Container>
         <Grid container rowSpacing={5} columnSpacing={5}>
           <Grid item />

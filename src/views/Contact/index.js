@@ -10,6 +10,7 @@ import { companyNameLogo } from "../../assets";
 import AddressMap from "../../components/Map";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { PageHref } from "../../constants";
 
 export default function Contact() {
   const theme = useTheme();
@@ -118,7 +119,7 @@ export default function Contact() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#F8EAE7" }}>
+    <Box id={PageHref.PAGE_ID.CONTACT} sx={{ backgroundColor: "#F8EAE7" }}>
       <Container sx={{ paddingBottom: 9 }}>
         <Grid container rowSpacing={5}>
           <Grid xs={12} item>

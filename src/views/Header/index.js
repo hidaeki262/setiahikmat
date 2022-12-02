@@ -6,6 +6,7 @@ import { Logo } from "./Logo";
 import { Label, PageHref } from "../../constants";
 import { BasicButton } from "../../components";
 import DrawerComponent from "./DrawerComponent";
+import { scrollToHref } from "../../components/ScrollToTop";
 
 export default function Header() {
   const app_bars = [
@@ -30,7 +31,8 @@ export default function Header() {
   return (
     <Box
       sx={{
-        paddingTop: 4,
+        paddingTop: 2,
+        paddingBottom: 2
       }}
     >
       <Container>
@@ -57,8 +59,8 @@ export default function Header() {
                     sx={{
                       color: "#333333",
                     }}
-                    href={app_bar.location}
                     label={app_bar.label}
+                    onClick={(e) => scrollToHref(e, app_bar.location)}
                   />
                 ))}
               </Stack>
