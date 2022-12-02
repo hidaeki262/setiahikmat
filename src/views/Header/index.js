@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import { Logo } from "./Logo";
 import { Label, PageHref } from "../../constants";
 import { BasicButton } from "../../components";
-import Drawer from "./Drawer";
+import DrawerComponent from "./DrawerComponent";
 
 export default function Header() {
   const app_bars = [
@@ -62,7 +62,7 @@ export default function Header() {
                   />
                 ))}
               </Stack>
-              <Drawer />
+              <DrawerComponent />
             </Grid>
           </Grid>
         </Grid>
