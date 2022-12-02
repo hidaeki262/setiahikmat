@@ -10,26 +10,29 @@ const AddressMap = () => {
   const matchesSM = useMediaQuery(theme.breakpoints.only("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.only("md"));
 
-  const src = "https://www.google.com/maps/embed/v1/place?key=";
+  const defaultWidth = "500";
+  const width = matchesMD
+    ? "400"
+    : matchesSM
+    ? "300"
+    : mobileL
+    ? "380"
+    : mobileM
+    ? "320"
+    : mobileS
+    ? "280"
+    : defaultWidth;
+
   const API_KEY = "AIzaSyDq4V7lU-EBoTtCIytlUXPzINPfQKNFUM0";
   const area = "&q=Diamond%20Square%2C%20Jalan%20Semarak%20API%202";
+  const src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}${area}`;
+  const title = "Google map for the company";
 
   return (
     <iframe
-      src={src + API_KEY + area}
-      width={
-        matchesMD
-          ? "400"
-          : matchesSM
-          ? "300"
-          : mobileS
-          ? "280"
-          : mobileM
-          ? "320"
-          : mobileL
-          ? "380"
-          : "500"
-      }
+      title={title}
+      src={src}
+      width={width}
       height={"200"}
       frameBorder="0"
       style={{ border: 0, boxShadow: "0px 3px 6px #00000029" }}
