@@ -118,7 +118,7 @@ export default function Contact() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#F8EAE7" }} id={PageHref.PAGE_ID.CONTACT}>
+    <Box sx={{ backgroundColor: "#F8EAE7" }}>
       <Container sx={{ paddingBottom: 9 }}>
         <Grid container rowSpacing={5}>
           <Grid xs={12} item>

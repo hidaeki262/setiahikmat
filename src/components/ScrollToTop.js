@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import Fade from "@mui/material/Fade";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { PageHref } from "../constants";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -18,7 +19,7 @@ function ScrollTop(props) {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
+      PageHref.PAGE_HREF.HOME
     );
 
     if (anchor) {
