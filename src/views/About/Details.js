@@ -1,14 +1,9 @@
-import { Typography } from "@mui/material";
+import { Text } from "../../components";
 
 export const Details = ({ content }) => {
   return (
-    <Typography
-      sx={{
-        font: "normal normal 600 20px/27px Open Sans",
-      }}
-      color={"#707070"}
-    >
+    <Text isBold isContent>
       {content}
-    </Typography>
+    </Text>
   );
 };

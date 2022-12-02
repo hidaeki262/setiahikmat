@@ -29,7 +29,6 @@ export default function Header() {
 
   return (
     <Box
-      id="back-to-top-anchor"
       sx={{
         paddingTop: 4,
       }}
@@ -56,7 +55,6 @@ export default function Header() {
                   <BasicButton
                     key={index}
                     sx={{
-                      font: "normal normal 600 20px/27px Open Sans",
                       color: "#333333",
                     }}
                     href={app_bar.location}

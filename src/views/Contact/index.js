@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Container, Grid, Typography } from "@mui/material";
-import { BasicButton, HoverComponent, Input } from "../../components";
+import { Container, Grid } from "@mui/material";
+import { BasicButton, HoverComponent, Input, Text } from "../../components";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -26,15 +26,11 @@ export default function Contact() {
   const onSubmit = () => {};
 
   const SectionTitle = () => {
-    const fontStyles = !matchesSM
-      ? "normal normal 600 18px/24px Open Sans"
-      : "normal normal 600 48px/65px Open Sans";
-
     return (
-      <HoverComponent width="550px">
-        <Typography sx={{ font: fontStyles }} color={"#A12814"}>
+      <HoverComponent width="580px">
+        <Text isBold isTitle>
           {label.title}
-        </Typography>
+        </Text>
       </HoverComponent>
     );
   };
@@ -58,7 +54,7 @@ export default function Contact() {
               <LocationOnIcon fontSize={"large"} />
             </Grid>
             <Grid xs={10} item>
-              <Typography variant="body1">{label.address}</Typography>
+              <Text>{label.address}</Text>
             </Grid>
           </Grid>
           <Grid container item>
@@ -66,7 +62,7 @@ export default function Contact() {
               <EmailIcon fontSize={"large"} />
             </Grid>
             <Grid xs={10} item>
-              <Typography variant="body1">{label.email}</Typography>
+              <Text>{label.email}</Text>
             </Grid>
           </Grid>
           <Grid container item>
@@ -74,7 +70,7 @@ export default function Contact() {
               <PhoneIcon fontSize={"large"} />
             </Grid>
             <Grid xs={10} item>
-              <Typography variant="body1">{label.contactNumber}</Typography>
+              <Text>{label.contactNumber}</Text>
             </Grid>
           </Grid>
           <Grid xs={12} item>
@@ -111,7 +107,6 @@ export default function Contact() {
               boxShadow: "0px 3px 6px #00000029",
               borderRadius: "16px",
               width: "100%",
-              font: "normal normal 600 20px/27px Open Sans",
             }}
             label={Label.FORM_LABEL.SUBMIT}
             variant="contained"

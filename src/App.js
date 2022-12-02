@@ -9,12 +9,12 @@ function App() {
   return (
     <React.Fragment>
       <Box sx={{ height: "100vh" }}>
+        <Toolbar id="back-to-top-anchor" />
         <ElevationScroll>
           <AppBar position="fixed" color="inherit">
             <Header />
           </AppBar>
         </ElevationScroll>
-        <Toolbar />
         <Toolbar />
         <Home />
         <Services />
