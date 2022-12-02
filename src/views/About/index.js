@@ -19,11 +19,7 @@ export default function About() {
   const ImageComponent = () => <Image />;
 
   return (
-    <Box
-      sx={{
-        marginBottom: 10,
-      }}
-    >
+    <Box>
       <Container>
         <Grid container rowSpacing={5} columnSpacing={5}>
           <Grid xs={12} item>

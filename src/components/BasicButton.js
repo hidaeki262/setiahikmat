@@ -18,11 +18,16 @@ export default function BasicButton({
   color = "primary",
   onClick,
   variant = "text",
+  sx,
   ...props
 }) {
   return (
     <ThemeProvider theme={theme}>
       <Button
+        sx={{
+          font: "normal normal 600 20px/27px Open Sans",
+          ...sx,
+        }}
         color={color}
         onClick={onClick}
         variant={variant}
