@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { BasicButton, HoverComponent, Input, Text } from "../../components";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
@@ -16,8 +16,6 @@ export default function Contact() {
   const matchesSM = useMediaQuery(theme.breakpoints.up("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
 
-  const fontStyle = "normal normal normal 16px/22px Open Sans";
-
   const label = {
     title: "Let's Start a Conversation",
     address: "Company Address Selangor, Malaysia",
@@ -28,15 +26,11 @@ export default function Contact() {
   const onSubmit = () => {};
 
   const SectionTitle = () => {
-    const fontStyles = !matchesSM
-      ? "normal normal 600 18px/24px Open Sans"
-      : "normal normal 600 48px/65px Open Sans";
-
     return (
       <HoverComponent width="580px">
-        <Typography sx={{ font: fontStyles }} color={"#A12814"}>
+        <Text isBold isTitle>
           {label.title}
-        </Typography>
+        </Text>
       </HoverComponent>
     );
   };
@@ -60,7 +54,7 @@ export default function Contact() {
               <LocationOnIcon fontSize={"large"} />
             </Grid>
             <Grid xs={10} item>
-              <Text sx={{ font: fontStyle }}>{label.address}</Text>
+              <Text>{label.address}</Text>
             </Grid>
           </Grid>
           <Grid container item>
@@ -68,7 +62,7 @@ export default function Contact() {
               <EmailIcon fontSize={"large"} />
             </Grid>
             <Grid xs={10} item>
-              <Text sx={{ font: fontStyle }}>{label.email}</Text>
+              <Text>{label.email}</Text>
             </Grid>
           </Grid>
           <Grid container item>
@@ -76,7 +70,7 @@ export default function Contact() {
               <PhoneIcon fontSize={"large"} />
             </Grid>
             <Grid xs={10} item>
-              <Text sx={{ font: fontStyle }}>{label.contactNumber}</Text>
+              <Text>{label.contactNumber}</Text>
             </Grid>
           </Grid>
           <Grid xs={12} item>
