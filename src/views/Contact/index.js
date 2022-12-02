@@ -5,7 +5,7 @@ import { BasicButton, HoverComponent, Input, Text } from "../../components";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import { Label, PageHref } from "../../constants";
+import { Label } from "../../constants";
 import { companyNameLogo } from "../../assets";
 import AddressMap from "../../components/Map";
 import { useTheme } from "@mui/material/styles";
