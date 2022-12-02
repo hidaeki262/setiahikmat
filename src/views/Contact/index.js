@@ -5,7 +5,7 @@ import { BasicButton, HoverComponent, Input, Text } from "../../components";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import { Label, PageHref } from "../../constants";
+import { Label } from "../../constants";
 import { companyNameLogo } from "../../assets";
 import AddressMap from "../../components/Map";
 import { useTheme } from "@mui/material/styles";
@@ -118,7 +118,7 @@ export default function Contact() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#F8EAE7" }} id={PageHref.PAGE_ID.CONTACT}>
+    <Box sx={{ backgroundColor: "#F8EAE7" }}>
       <Container sx={{ paddingBottom: 9 }}>
         <Grid container rowSpacing={5}>
           <Grid xs={12} item>

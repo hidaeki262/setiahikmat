@@ -1,7 +1,9 @@
 import * as React from "react";
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { Drawer, Grid, IconButton } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Label, PageHref } from "../../constants";
+import { BasicButton } from "../../components";
+import CloseIcon from "@mui/icons-material/Close";
 
 const options = [
   {
@@ -26,12 +28,8 @@ const options = [
   },
 ];
 
-export default function Drawer() {
+export default function DrawerComponent() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const windowLocationHRef = `#${window.location.href.split("#")[1]}`;
-  const [selectedIndex, setSelectedIndex] = React.useState(
-    options.findIndex((option) => option.location === windowLocationHRef)
-  );
 
   const open = Boolean(anchorEl);
 
@@ -39,21 +37,13 @@ export default function Drawer() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuItemClick = (event, index, location) => {
-    setSelectedIndex(index);
+  const handleMenuItemClick = () => {
     setAnchorEl(null);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  React.useEffect(() => {
-    // do something when path changes ...
-    setSelectedIndex(
-      options.findIndex((option) => option.location === windowLocationHRef)
-    );
-  }, [windowLocationHRef]);
 
   return (
     <>
@@ -71,31 +61,30 @@ export default function Drawer() {
           color: "#D9593D",
         }}
       >
-        <MenuRoundedIcon />
+        <MenuRoundedIcon fontSize="large" />
       </IconButton>
-      <Menu
-        id="lock-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "lock-button",
-          role: "listbox",
-        }}
-      >
-        {options.map((option, index) => (
-          <MenuItem
-            href={option.location}
-            key={index}
-            selected={index === selectedIndex}
-            onClick={(event) =>
-              handleMenuItemClick(event, index, option.location)
-            }
-          >
-            {option.title}
-          </MenuItem>
-        ))}
-      </Menu>
+      <Drawer anchor={"right"} open={open} onClose={handleClose}>
+        <Grid container rowSpacing={1}>
+          <Grid sx={{ textAlign: "end" }} xs={12} item>
+            <CloseIcon
+              sx={{ margin: 1, cursor: "pointer", color: "#D9593D" }}
+              onClick={handleClose}
+              fontSize="large"
+            />
+          </Grid>
+          {options.map((option, index) => (
+            <Grid xs={12} item>
+              <BasicButton
+                sx={{ color: "#707070", width: "100%" }}
+                key={index}
+                href={option.location}
+                label={option.title}
+                onClick={handleMenuItemClick}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Drawer>
     </>
   );
 }

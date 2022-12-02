@@ -4,7 +4,6 @@ import { Container, Grid } from "@mui/material";
 import { Title } from "./Title";
 import { Details } from "./Details";
 import { Image } from "./Image";
-import { PageHref } from "../../constants";
 
 export default function About() {
   const label = {
@@ -20,12 +19,7 @@ export default function About() {
   const ImageComponent = () => <Image />;
 
   return (
-    <Box
-      sx={{
-        marginBottom: 10,
-      }}
-      id={PageHref.PAGE_ID.ABOUT}
-    >
+    <Box>
       <Container>
         <Grid container rowSpacing={5} columnSpacing={5}>
           <Grid xs={12} item>
