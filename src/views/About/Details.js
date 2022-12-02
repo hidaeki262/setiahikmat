@@ -1,14 +1,5 @@
-import { Typography } from "@mui/material";
+import { Text } from "../../components";
 
 export const Details = ({ content }) => {
-  return (
-    <Typography
-      sx={{
-        font: "normal normal 600 20px/27px Open Sans",
-      }}
-      color={"#707070"}
-    >
-      {content}
-    </Typography>
-  );
+  return <Text sx={{ color: "#707070" }}>{content}</Text>;
 };
