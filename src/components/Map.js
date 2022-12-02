@@ -31,11 +31,11 @@ const AddressMap = () => {
           : "500"
       }
       height={"200"}
-      frameborder="0"
+      frameBorder="0"
       style={{ border: 0, boxShadow: "0px 3px 6px #00000029" }}
-      allowfullscreen=""
+      allowFullScreen=""
       aria-hidden="false"
-      tabindex="0"
+      tabIndex="0"
     ></iframe>
   );
 };

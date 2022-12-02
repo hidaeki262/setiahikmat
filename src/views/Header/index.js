@@ -8,11 +8,30 @@ import { BasicButton } from "../../components";
 import Drawer from "./Drawer";
 
 export default function Header() {
+  const app_bars = [
+    {
+      label: Label.APP_BAR_LABEL.HOME,
+      location: PageHref.PAGE_HREF.HOME,
+    },
+    {
+      label: Label.APP_BAR_LABEL.PRODUCTS,
+      location: PageHref.PAGE_HREF.PRODUCTS,
+    },
+    {
+      label: Label.APP_BAR_LABEL.ABOUT,
+      location: PageHref.PAGE_HREF.ABOUT,
+    },
+    {
+      label: Label.APP_BAR_LABEL.CONTACT,
+      location: PageHref.PAGE_HREF.CONTACT,
+    },
+  ];
+
   return (
     <Box
+      id="back-to-top-anchor"
       sx={{
-        maxHeight: 150,
-        alignItems: "center",
+        paddingTop: 4,
       }}
     >
       <Container>
@@ -33,38 +52,17 @@ export default function Header() {
                 direction="row"
                 spacing={5}
               >
-                <BasicButton
-                  sx={{
-                    font: "normal normal 600 20px/27px Open Sans",
-                    color: "#333333",
-                  }}
-                  href={PageHref.PAGE_HREF.HOME}
-                  label={Label.APP_BAR_LABEL.HOME}
-                />
-                <BasicButton
-                  sx={{
-                    font: "normal normal 600 20px/27px Open Sans",
-                    color: "#333333",
-                  }}
-                  href={PageHref.PAGE_HREF.ABOUT}
-                  label={Label.APP_BAR_LABEL.ABOUT}
-                />
-                <BasicButton
-                  sx={{
-                    font: "normal normal 600 20px/27px Open Sans",
-                    color: "#333333",
-                  }}
-                  href={PageHref.PAGE_HREF.PRODUCTS}
-                  label={Label.APP_BAR_LABEL.PRODUCTS}
-                />
-                <BasicButton
-                  sx={{
-                    font: "normal normal 600 20px/27px Open Sans",
-                    color: "#333333",
-                  }}
-                  href={PageHref.PAGE_HREF.CONTACT}
-                  label={Label.APP_BAR_LABEL.CONTACT}
-                />
+                {app_bars.map((app_bar, index) => (
+                  <BasicButton
+                    key={index}
+                    sx={{
+                      font: "normal normal 600 20px/27px Open Sans",
+                      color: "#333333",
+                    }}
+                    href={app_bar.location}
+                    label={app_bar.label}
+                  />
+                ))}
               </Stack>
               <Drawer />
             </Grid>

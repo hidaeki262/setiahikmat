@@ -1,16 +1,21 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import { Header, Home, Services, About, Contact } from "./views";
 import ScrollToTop from "./components/ScrollToTop";
+import { AppBar, Toolbar } from "@mui/material";
+import { ElevationScroll } from "./components";
 
 function App() {
-  // TODO: Add pages
   return (
     <React.Fragment>
       <Box sx={{ height: "100vh" }}>
-        <Toolbar id="back-to-top-anchor" />
-        <Header />
+        <ElevationScroll>
+          <AppBar position="fixed" color="inherit">
+            <Header />
+          </AppBar>
+        </ElevationScroll>
+        <Toolbar />
+        <Toolbar />
         <Home />
         <Services />
         <About />

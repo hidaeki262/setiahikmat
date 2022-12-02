@@ -1,7 +1,7 @@
 export const APP_BAR_LABEL = {
   HOME: "Home",
   ABOUT: "About",
-  PRODUCTS: "Products",
+  PRODUCTS: "Services",
   CONTACT: "Contact",
 };
 
