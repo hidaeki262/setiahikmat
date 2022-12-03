@@ -8,7 +8,7 @@ import { BasicButton } from "../../components";
 import DrawerComponent from "./DrawerComponent";
 import { scrollToHref } from "../../components/ScrollToTop";
 
-export default function Header() {
+export default function Header({ handleToggle }) {
   const app_bars = [
     {
       label: Label.APP_BAR_LABEL.HOME,
@@ -32,7 +32,7 @@ export default function Header() {
     <Box
       sx={{
         paddingTop: 2,
-        paddingBottom: 2
+        paddingBottom: 2,
       }}
     >
       <Container>
@@ -64,7 +64,7 @@ export default function Header() {
                   />
                 ))}
               </Stack>
-              <DrawerComponent />
+              <DrawerComponent handleToggle={handleToggle} />
             </Grid>
           </Grid>
         </Grid>
