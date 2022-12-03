@@ -5,8 +5,13 @@ import { Title } from "./Title";
 import { Details } from "./Details";
 import { Image } from "./Image";
 import { PageHref } from "../../constants";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function About() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md")); // sm onwards
+
   const label = {
     title: "Who We Are",
     about:
@@ -27,7 +32,7 @@ export default function About() {
       }}
     >
       <Container>
-        <Grid container rowSpacing={5} columnSpacing={5}>
+        <Grid container rowSpacing={matches ? 5 : 2} columnSpacing={5}>
           <Grid xs={12} item>
             <TitleComponent />
           </Grid>
