@@ -2,11 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { Header, Home, Services, About, Contact } from "./views";
 import ScrollToTop, { scrollToHref } from "./components/ScrollToTop";
-import { BasicButton, ElevationScroll } from "./components";
-import { AppBar, Backdrop, Grid } from "@mui/material";
+import { ElevationScroll } from "./components";
+import { AppBar } from "@mui/material";
 import { Label, PageHref } from "./constants";
-import CloseIcon from "@mui/icons-material/Close";
-import { Logo } from "./views/Header/Logo";
+import MenuBackdrop from "./components/MenuBackdrop";
 
 const options = [
   {
@@ -59,39 +58,7 @@ function App() {
         <Contact />
         <ScrollToTop />
       </Box>
-      <Backdrop
-        sx={{
-          backdropFilter: "blur(30px)",
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-        }}
-        open={open}
-        onClick={handleClose}
-      >
-        <Box sx={{ margin: 5 }}>
-          <Grid container rowSpacing={5}>
-            <Grid xs={3}>
-              <Logo />
-            </Grid>
-            <Grid sx={{ textAlign: "end" }} xs={9} item>
-              <CloseIcon
-                sx={{ margin: 1, cursor: "pointer", color: "#D9593D" }}
-                onClick={handleClose}
-                fontSize="large"
-              />
-            </Grid>
-            {options.map((option, index) => (
-              <Grid xs={12} item>
-                <BasicButton
-                  sx={{ color: "#FFCCBC", width: "100%" }}
-                  key={index}
-                  label={option.title}
-                  onClick={(e) => handleClose(e, option.location)}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Backdrop>
+      <MenuBackdrop handleClose={handleClose} options={options} open={open} />
     </React.Fragment>
   );
 }

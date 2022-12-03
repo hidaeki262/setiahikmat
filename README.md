@@ -9,6 +9,6 @@ React Web for Setia Hikmat
 - [x] ABOUT PAGE
 - [x] CONTACT FORM
 - [x] HOME PAGE
-- [ ] SERVICES PAGE
+- [x] SERVICES PAGE
 - [x] NAVIGATION
 - [ ] EMAIL

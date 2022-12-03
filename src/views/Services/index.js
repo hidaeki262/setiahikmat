@@ -1,12 +1,11 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { Title } from "../About/Title";
 import { Details } from "../About/Details";
 import { PageHref } from "../../constants";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
+import { imageList_01 } from "../../assets";
+import { Colour } from "../../constants/Colour";
 
 export default function About() {
   const label = {
@@ -17,15 +16,21 @@ export default function About() {
 
   const imageList = [
     {
-      img: "/assets/imageList_01.png",
+      img: imageList_01,
+      content:
+        "We are a one-stop renovation company that provides comprehensive construction services covering commercial and your sweet home.",
       label: "Construction",
     },
     {
-      img: "/assets/imageList_01.png",
+      img: imageList_01,
+      content:
+        "With our growth in experience over the years, we provide an extensive range of renovation solutions to our clients.",
       label: "Renovation",
     },
     {
-      img: "/assets/imageList_01.png",
+      img: imageList_01,
+      content:
+        "As a leading raw materials provider, we aim to meet our client’s needs in all aspects of construction and renovation at the best rate and pricing.",
       label: "Customise Component",
     },
   ];
@@ -43,6 +48,69 @@ export default function About() {
     />
   );
 
+  const HoverComponent = (props) => {
+    const { img, content, label, index } = props;
+    return (
+      <Grid key={label + index} item>
+        <Box
+          sx={{
+            paddingTop: index * 5,
+            "@media (max-width:768px)": {
+              paddingTop: 0,
+            },
+          }}
+        >
+          <Grid>
+            {/* Comment this for correct mobile view */}
+            <Box
+              sx={{
+                position: "absolute",
+                marginTop: "6px",
+                marginLeft: "9px",
+                height: "478px",
+                width: "352px",
+                background: "#FF8A69 0% 0% no-repeat padding-box",
+                opacity: 0,
+                transition: "0.3s ease-out",
+                ":hover": {
+                  opacity: 0.84,
+                },
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  marginLeft: "75px",
+                  marginRight: "75px",
+                  font: "normal normal 500 20px/27px Open Sans",
+                  letterSpacing: "0px",
+                  color: Colour.WHITE,
+                  opacity: 1,
+                }}
+              >
+                {content}
+              </Typography>
+            </Box>
+            {/* Comment this for correct mobile view  */}
+            <Box component={"img"} src={img} />
+          </Grid>
+          <Typography
+            sx={{
+              font: "normal normal 600 34px/46px Open Sans",
+              "@media (max-width:768px)": {
+                font: "normal normal 600 16px/22px Open Sans",
+              },
+              color: Colour.DARKGREY,
+            }}
+          >
+            {label}
+          </Typography>
+        </Box>
+      </Grid>
+    );
+  };
+
   return (
     <Box id={PageHref.PAGE_ID.PRODUCTS}>
       <Container>
@@ -55,20 +123,10 @@ export default function About() {
             <DetailsComponent />
           </Grid>
           <Grid xs={12} item>
-            <Grid container>
-              <ImageList sx={{ overflow: "hidden" }}>
-                {imageList.map((item, index) => (
-                  <ImageListItem key={index}>
-                    <img
-                      src={`${item.img}?fit=crop&auto=format`}
-                      srcSet={`${item.img}?fit=crop&auto=format&dpr=2 2x`}
-                      alt={item.title}
-                      loading="lazy"
-                    />
-                    <ImageListItemBar title={item.label} position={"below"} />
-                  </ImageListItem>
-                ))}
-              </ImageList>
+            <Grid container style={{ overflowX: "auto", flexWrap: "nowrap" }}>
+              {imageList.map((item, index) => {
+                return <HoverComponent {...item} index={index} />;
+              })}
             </Grid>
           </Grid>
           <Grid item />
