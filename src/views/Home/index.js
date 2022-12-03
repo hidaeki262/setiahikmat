@@ -20,7 +20,7 @@ export default function Home() {
       sx={{
         backgroundImage: `url(${homeBg})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "50% 80%",
+        backgroundPosition: "center",
         backgroundSize: "cover",
       }}
     >

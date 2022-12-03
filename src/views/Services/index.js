@@ -4,6 +4,9 @@ import { Container, Grid } from "@mui/material";
 import { Title } from "../About/Title";
 import { Details } from "../About/Details";
 import { PageHref } from "../../constants";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 export default function About() {
   const label = {
@@ -12,9 +15,32 @@ export default function About() {
       "We aim to provide the best-customised services to our clients to meet their needs at the best rates and pricing.",
   };
 
+  const imageList = [
+    {
+      img: "/assets/imageList_01.png",
+      label: "Construction",
+    },
+    {
+      img: "/assets/imageList_01.png",
+      label: "Renovation",
+    },
+    {
+      img: "/assets/imageList_01.png",
+      label: "Customise Component",
+    },
+  ];
+
   const TitleComponent = () => <Title title={label.title} />;
   const DetailsComponent = () => (
-    <Details style={{ width: "60%" }} content={label.content} />
+    <Details
+      sx={{
+        width: "60%",
+        "@media (max-width:768px)": {
+          width: "80%",
+        },
+      }}
+      content={label.content}
+    />
   );
 
   return (
@@ -30,9 +56,19 @@ export default function About() {
           </Grid>
           <Grid xs={12} item>
             <Grid container>
-              <Grid xs={4} item sx={{ bgcolor: "red" }}></Grid>
-              <Grid xs={4} item sx={{ bgcolor: "blue" }}></Grid>
-              <Grid xs={4} item sx={{ bgcolor: "black" }}></Grid>
+              <ImageList sx={{ overflow: "hidden" }}>
+                {imageList.map((item, index) => (
+                  <ImageListItem key={index}>
+                    <img
+                      src={`${item.img}?fit=crop&auto=format`}
+                      srcSet={`${item.img}?fit=crop&auto=format&dpr=2 2x`}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                    <ImageListItemBar title={item.label} position={"below"} />
+                  </ImageListItem>
+                ))}
+              </ImageList>
             </Grid>
           </Grid>
           <Grid item />
