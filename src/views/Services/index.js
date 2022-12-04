@@ -4,7 +4,7 @@ import { Container, Grid, ImageListItem, Typography } from "@mui/material";
 import { Title } from "../About/Title";
 import { Details } from "../About/Details";
 import { PageHref } from "../../constants";
-import { imageList_01 } from "../../assets";
+import { imageList_01, imageList_02, imageList_03 } from "../../assets";
 import { Colour } from "../../constants/Colour";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -27,13 +27,13 @@ export default function About() {
       label: "Construction",
     },
     {
-      img: imageList_01,
+      img: imageList_02,
       content:
         "With our growth in experience over the years, we provide an extensive range of renovation solutions to our clients.",
       label: "Renovation",
     },
     {
-      img: imageList_01,
+      img: imageList_03,
       content:
         "As a leading raw materials provider, we aim to meet our client’s needs in all aspects of construction and renovation at the best rate and pricing.",
       label: "Customise Component",
@@ -72,10 +72,9 @@ export default function About() {
                 <Box
                   sx={{
                     position: "absolute",
-                    marginTop: "6px",
-                    marginLeft: "9px",
-                    height: "478px",
-                    width: "352px",
+                    height: "496px",
+                    width: "370px",
+                    marginRight: "12px",
                     background: "#FF8A69 0% 0% no-repeat padding-box",
                     opacity: 0,
                     transition: "0.3s ease-out",
@@ -85,16 +84,12 @@ export default function About() {
                     display: "flex",
                     alignItems: "center",
                     "@media (max-width:1024px)": {
-                      marginTop: "4px",
-                      marginLeft: "7px",
-                      height: "416px",
-                      width: "310px",
+                      height: "430px",
+                      width: "325px",
                     },
                     "@media (max-width:768px)": {
-                      marginTop: "4px",
-                      marginLeft: "5px",
-                      height: "332px",
-                      width: "244px",
+                      height: "344px",
+                      width: "255px",
                     },
                   }}
                 >
@@ -119,6 +114,10 @@ export default function About() {
                 {/* render image */}
                 <Box
                   sx={{
+                    marginRight: "12px",
+                    height: "496px",
+                    width: "370px",
+                    objectFit: "cover",
                     "@media (max-width:1024px)": {
                       height: "430px",
                       width: "325px",
@@ -170,7 +169,7 @@ export default function About() {
             })}
           </Grid>
         </Grid>
-        <Grid xs={12} item id={PageHref.PAGE_ID.ABOUT} sx={{ height: 114 }} />
+        <Grid xs={12} item id={PageHref.PAGE_ID.ABOUT} sx={{ height: "130px" }} />
       </Grid>
     </Container>
   );

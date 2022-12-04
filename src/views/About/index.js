@@ -42,7 +42,7 @@ export default function About() {
             <ImageComponent />
           </Grid>
         </Grid>
-        <Grid xs={12} item id={PageHref.PAGE_ID.CONTACT} sx={{ height: "114px" }} />
+        <Grid xs={12} item id={PageHref.PAGE_ID.CONTACT} sx={{ height: 72 }} />
       </Container>
     </Box>
   );
