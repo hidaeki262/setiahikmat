@@ -1,13 +1,18 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, ImageListItem, Typography } from "@mui/material";
 import { Title } from "../About/Title";
 import { Details } from "../About/Details";
 import { PageHref } from "../../constants";
 import { imageList_01 } from "../../assets";
 import { Colour } from "../../constants/Colour";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function About() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md")); // sm onwards
+
   const label = {
     title: "Our Services",
     content:
@@ -51,7 +56,7 @@ export default function About() {
   const HoverComponent = (props) => {
     const { img, content, label, index } = props;
     return (
-      <Grid key={label + index} item>
+      <ImageListItem key={label + index} item>
         <Box
           sx={{
             paddingTop: index * 5,
@@ -60,61 +65,98 @@ export default function About() {
             },
           }}
         >
-          <Grid>
-            {/* Comment this for correct mobile view */}
-            <Box
-              sx={{
-                position: "absolute",
-                marginTop: "6px",
-                marginLeft: "9px",
-                height: "478px",
-                width: "352px",
-                background: "#FF8A69 0% 0% no-repeat padding-box",
-                opacity: 0,
-                transition: "0.3s ease-out",
-                ":hover": {
-                  opacity: 0.84,
-                },
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
+          <Grid container>
+            <Grid xs={12} item>
+              <Box>
+                {/* render hover content */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    marginTop: "6px",
+                    marginLeft: "9px",
+                    height: "478px",
+                    width: "352px",
+                    background: "#FF8A69 0% 0% no-repeat padding-box",
+                    opacity: 0,
+                    transition: "0.3s ease-out",
+                    ":hover": {
+                      opacity: 0.84,
+                    },
+                    display: "flex",
+                    alignItems: "center",
+                    "@media (max-width:1024px)": {
+                      marginTop: "4px",
+                      marginLeft: "7px",
+                      height: "416px",
+                      width: "310px",
+                    },
+                    "@media (max-width:768px)": {
+                      marginTop: "4px",
+                      marginLeft: "5px",
+                      height: "332px",
+                      width: "244px",
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      marginLeft: "75px",
+                      marginRight: "75px",
+                      font: "normal normal 500 20px/27px Open Sans",
+                      letterSpacing: "0px",
+                      color: Colour.WHITE,
+                      opacity: 1,
+                      "@media (max-width:1024px)": {
+                        font: "normal normal 600 16px/22px Open Sans",
+                        marginLeft: "30px",
+                        marginRight: "30px",
+                      },
+                    }}
+                  >
+                    {content}
+                  </Typography>
+                </Box>
+                {/* render image */}
+                <Box
+                  sx={{
+                    "@media (max-width:1024px)": {
+                      height: "430px",
+                      width: "325px",
+                    },
+                    "@media (max-width:768px)": {
+                      height: "344px",
+                      width: "255px",
+                    },
+                  }}
+                  component="img"
+                  src={img}
+                />
+              </Box>
+            </Grid>
+            {/* render component label */}
+            <Grid xs={12} item>
               <Typography
                 sx={{
-                  marginLeft: "75px",
-                  marginRight: "75px",
-                  font: "normal normal 500 20px/27px Open Sans",
-                  letterSpacing: "0px",
-                  color: Colour.WHITE,
-                  opacity: 1,
+                  font: "normal normal 600 34px/46px Open Sans",
+                  "@media (max-width:768px)": {
+                    font: "normal normal 600 16px/22px Open Sans",
+                  },
+                  color: Colour.DARKGREY,
                 }}
               >
-                {content}
+                {label}
               </Typography>
-            </Box>
-            {/* Comment this for correct mobile view  */}
-            <Box component={"img"} src={img} />
+            </Grid>
           </Grid>
-          <Typography
-            sx={{
-              font: "normal normal 600 34px/46px Open Sans",
-              "@media (max-width:768px)": {
-                font: "normal normal 600 16px/22px Open Sans",
-              },
-              color: Colour.DARKGREY,
-            }}
-          >
-            {label}
-          </Typography>
         </Box>
-      </Grid>
+      </ImageListItem>
     );
   };
 
   return (
     <Box id={PageHref.PAGE_ID.PRODUCTS}>
       <Container>
-        <Grid container rowSpacing={5} columnSpacing={5}>
+        <Grid container rowSpacing={matches ? 5 : 2} columnSpacing={5}>
           <Grid item />
           <Grid xs={12} item>
             <TitleComponent />
