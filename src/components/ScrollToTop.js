@@ -12,7 +12,7 @@ export const scrollToHref = (event, href) => {
 
   if (anchor) {
     anchor.scrollIntoView({
-      block: "center",
+      block: "start",
       behavior: "smooth",
     });
   }

@@ -119,7 +119,7 @@ export default function Contact() {
   );
 
   return (
-    <Box id={PageHref.PAGE_ID.CONTACT} sx={{ backgroundColor: "#F8EAE7" }}>
+    <Box sx={{ backgroundColor: "#F8EAE7" }}>
       <Container sx={{ paddingBottom: 9 }}>
         <Grid container rowSpacing={5}>
           <Grid xs={12} item>

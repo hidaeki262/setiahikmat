@@ -26,17 +26,18 @@ export default function Home() {
     >
       <Container>
         <Grid container>
-          <Grid container rowSpacing={12} >
+          <Grid container rowSpacing={12}>
             <Grid xs={12} item />
             <Grid xs={12} item />
             <Grid xs={12} item>
               <Typography
                 sx={{
                   font: "normal normal 600 60px/82px Open Sans",
+                  width: 3.5 / 5,
                   "@media (max-width:768px)": {
+                    width: 4.5 / 5,
                     font: "normal normal 600 32px/43px Open Sans",
                   },
-                  width: 3.5 / 5,
                   color: Colour.RED,
                   letterSpacing: 0,
                 }}
@@ -50,6 +51,7 @@ export default function Home() {
                   width: 3 / 5,
                   font: "normal normal 600 34px/46px Open Sans",
                   "@media (max-width:768px)": {
+                    width: 4 / 5,
                     font: "normal normal 600 16px/22px Open Sans",
                   },
                   color: Colour.DARKGREY,
@@ -58,7 +60,7 @@ export default function Home() {
                 {labels.contentMsg}
               </Typography>
             </Grid>
-            <Grid xs={12} item />
+            <Grid xs={12} item id={PageHref.PAGE_ID.PRODUCTS} />
           </Grid>
         </Grid>
       </Container>

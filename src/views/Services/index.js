@@ -46,7 +46,7 @@ export default function About() {
       sx={{
         width: "60%",
         "@media (max-width:768px)": {
-          width: "80%",
+          width: "100%",
         },
       }}
       content={label.content}
@@ -154,26 +154,24 @@ export default function About() {
   };
 
   return (
-    <Box id={PageHref.PAGE_ID.PRODUCTS}>
-      <Container>
-        <Grid container rowSpacing={matches ? 5 : 2} columnSpacing={5}>
-          <Grid item />
-          <Grid xs={12} item>
-            <TitleComponent />
-          </Grid>
-          <Grid xs={12} item>
-            <DetailsComponent />
-          </Grid>
-          <Grid xs={12} item>
-            <Grid container style={{ overflowX: "auto", flexWrap: "nowrap" }}>
-              {imageList.map((item, index) => {
-                return <HoverComponent {...item} index={index} />;
-              })}
-            </Grid>
-          </Grid>
-          <Grid item />
+    <Container>
+      <Grid container rowSpacing={matches ? 5 : 2} columnSpacing={5}>
+        <Grid item />
+        <Grid xs={12} item>
+          <TitleComponent />
         </Grid>
-      </Container>
-    </Box>
+        <Grid xs={12} item>
+          <DetailsComponent />
+        </Grid>
+        <Grid xs={12} item>
+          <Grid container style={{ overflowX: "auto", flexWrap: "nowrap" }}>
+            {imageList.map((item, index) => {
+              return <HoverComponent {...item} index={index} />;
+            })}
+          </Grid>
+        </Grid>
+        <Grid xs={12} item id={PageHref.PAGE_ID.ABOUT} sx={{ height: 114 }} />
+      </Grid>
+    </Container>
   );
 }
