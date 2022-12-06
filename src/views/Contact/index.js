@@ -1,16 +1,15 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Container, Grid } from "@mui/material";
-import { BasicButton, HoverComponent, Input, Text } from "../../components";
+import { HoverComponent, Text } from "../../components";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import { Label } from "../../constants";
 import { companyNameLogo } from "../../assets";
 import AddressMap from "../../components/Map";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { PageHref } from "../../constants";
+import ContactDetails from "./ContactDetails";
 
 export default function Contact() {
   const theme = useTheme();
@@ -23,8 +22,6 @@ export default function Contact() {
     email: "Email Address",
     contactNumber: "Contact Number",
   };
-
-  const onSubmit = () => {};
 
   const SectionTitle = () => {
     return (
@@ -77,42 +74,6 @@ export default function Contact() {
           <Grid xs={12} item>
             <AddressMap />
           </Grid>
-        </Grid>
-      </Grid>
-    </Grid>
-  );
-
-  const ContactDetails = () => (
-    <Grid xs={12} item>
-      <Grid container rowSpacing={2}>
-        <Grid xs={12} item>
-          <Input label={Label.INPUT_LABEL.Name} />
-        </Grid>
-        <Grid xs={12} item>
-          <Input label={Label.INPUT_LABEL.Email} />
-        </Grid>
-        <Grid xs={12} item>
-          <Input label={Label.INPUT_LABEL.Contact} />
-        </Grid>
-        <Grid xs={12} item>
-          <Input label={Label.INPUT_LABEL.Address} multiline rows={4} />
-        </Grid>
-        <Grid xs={12} item>
-          <Input label={Label.INPUT_LABEL.Message} multiline rows={4} />
-        </Grid>
-        <Grid xs={12} item>
-          <BasicButton
-            sx={{
-              background:
-                "transparent linear-gradient(180deg, #FF8A69 0%, #D9593D 100%) 0% 0% no-repeat padding-box",
-              boxShadow: "0px 3px 6px #00000029",
-              borderRadius: "16px",
-              width: "100%",
-            }}
-            label={Label.FORM_LABEL.SUBMIT}
-            variant="contained"
-            onClick={onSubmit}
-          />
         </Grid>
       </Grid>
     </Grid>

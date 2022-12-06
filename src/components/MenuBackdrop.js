@@ -18,7 +18,7 @@ export default function MenuBackdrop(props) {
     >
       <Box sx={{ margin: 5 }}>
         <Grid container rowSpacing={5}>
-          <Grid xs={3}>
+          <Grid xs={3} item>
             <Logo />
           </Grid>
           <Grid sx={{ textAlign: "end" }} xs={9} item>
@@ -29,7 +29,7 @@ export default function MenuBackdrop(props) {
             />
           </Grid>
           {options.map((option, index) => (
-            <Grid xs={12} item>
+            <Grid key={index} xs={12} item>
               <BasicButton
                 sx={{ color: "#FFCCBC", width: "100%" }}
                 key={index}

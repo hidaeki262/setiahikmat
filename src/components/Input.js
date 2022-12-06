@@ -2,7 +2,17 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function Input({ variant = "outlined", ...props }) {
+export default function Input({
+  variant = "outlined",
+  value,
+  onChange,
+  ...props
+}) {
+  const handleChange = (e) => {
+    e.preventDefault();
+    onChange(e.target.value);
+  };
+
   return (
     <Box
       component="form"
@@ -15,7 +25,23 @@ export default function Input({ variant = "outlined", ...props }) {
       noValidate
       autoComplete="off"
     >
-      <TextField id="standard-basic" variant={variant} {...props} />
+      <TextField
+        onChange={handleChange}
+        value={value}
+        InputLabelProps={{
+          sx: {
+            font: "normal normal normal 16px/22px Open Sans",
+          },
+        }}
+        InputProps={{
+          sx: {
+            font: "normal normal normal 16px/22px Open Sans",
+          },
+        }}
+        id="standard-basic"
+        variant={variant}
+        {...props}
+      />
     </Box>
   );
 }
