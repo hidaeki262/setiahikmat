@@ -15,7 +15,21 @@ export default function Input({ variant = "outlined", ...props }) {
       noValidate
       autoComplete="off"
     >
-      <TextField id="standard-basic" variant={variant} {...props} />
+      <TextField
+        InputLabelProps={{
+          sx: {
+            font: "normal normal normal 16px/22px Open Sans",
+          },
+        }}
+        InputProps={{
+          sx: {
+            font: "normal normal normal 16px/22px Open Sans",
+          },
+        }}
+        id="standard-basic"
+        variant={variant}
+        {...props}
+      />
     </Box>
   );
 }
