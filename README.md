@@ -11,5 +11,5 @@ React Web for Setia Hikmat
 - [x] HOME PAGE
 - [x] SERVICES PAGE
 - [x] NAVIGATION
-- [ ] EMAIL
+- [x] EMAIL
 - [x] MOBILE VIEW
