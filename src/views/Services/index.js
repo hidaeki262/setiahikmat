@@ -56,7 +56,7 @@ export default function About() {
   const HoverComponent = (props) => {
     const { img, content, label, index } = props;
     return (
-      <ImageListItem key={label + index} item>
+      <ImageListItem>
         <Box
           sx={{
             paddingTop: index * 5,
@@ -165,11 +165,16 @@ export default function About() {
         <Grid xs={12} item>
           <Grid container style={{ overflowX: "auto", flexWrap: "nowrap" }}>
             {imageList.map((item, index) => {
-              return <HoverComponent {...item} index={index} />;
+              return <HoverComponent key={index} {...item} index={index} />;
             })}
           </Grid>
         </Grid>
-        <Grid xs={12} item id={PageHref.PAGE_ID.ABOUT} sx={{ height: "130px" }} />
+        <Grid
+          xs={12}
+          item
+          id={PageHref.PAGE_ID.ABOUT}
+          sx={{ height: "130px" }}
+        />
       </Grid>
     </Container>
   );
