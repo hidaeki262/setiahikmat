@@ -12,7 +12,6 @@ export default function ContactDetails(params) {
   const [message, setMessage] = React.useState({
     name: "",
     email: "",
-    contact: "",
     address: "",
     message: "",
   });
@@ -20,35 +19,75 @@ export default function ContactDetails(params) {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    const isValidName = !!message.name;
+    const isValidEmail = !!message.email && !onValidateEmail(message.email);
+    const isValidSubject = !!message.address;
+    const isValidMessage = !!message.message;
+    const isValid =
+      isValidName && isValidEmail && isValidSubject && isValidMessage;
+
     const templateParams = {
-      to_email: "avalonblackshot@gmail.com",
-      to_name: "avalonblackshot@gmail.com",
-      ...message,
+      from_name: message.name,
+      from_email: message.email,
+      from_subject: message.address,
+      from_message: message.message,
     };
 
-    emailjs.send(service_id, template_id, templateParams, public_key).then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Email sent!");
-        setMessage({
-          name: "",
-          email: "",
-          contact: "",
-          address: "",
-          message: "",
-        });
-      },
-      (err) => {
-        console.log("FAILED...", err);
-        setMessage({
-          name: "",
-          email: "",
-          contact: "",
-          address: "",
-          message: "",
-        });
+    if (isValid) {
+      emailjs.send(service_id, template_id, templateParams, public_key).then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Email sent!");
+          setMessage({
+            name: "",
+            email: "",
+            address: "",
+            message: "",
+          });
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          setMessage({
+            name: "",
+            email: "",
+            address: "",
+            message: "",
+          });
+        }
+      );
+    }
+  };
+
+  const onValidateName = (val) => {
+    if (val) {
+      return !val;
+    }
+    return;
+  };
+
+  const onValidateEmail = (val) => {
+    if (val) {
+      if (val.includes("@")) {
+        return !val;
+      } else {
+        return true;
       }
-    );
+    }
+    return;
+  };
+
+  const onValidateSubject = (val) => {
+    if (val) {
+      return !val;
+    }
+    return;
+  };
+
+  const onValidateMessage = (val) => {
+    if (val) {
+      return !val;
+    }
+    return;
   };
 
   return (
@@ -56,6 +95,7 @@ export default function ContactDetails(params) {
       <Grid container rowSpacing={2}>
         <Grid xs={12} item>
           <Input
+            error={onValidateName(message.name)}
             value={message.name}
             onChange={(val) => setMessage((prev) => ({ ...prev, name: val }))}
             label={Label.INPUT_LABEL.Name}
@@ -63,6 +103,8 @@ export default function ContactDetails(params) {
         </Grid>
         <Grid xs={12} item>
           <Input
+            error={onValidateEmail(message.email)}
+            type="email"
             value={message.email}
             onChange={(val) => setMessage((prev) => ({ ...prev, email: val }))}
             label={Label.INPUT_LABEL.Email}
@@ -70,15 +112,7 @@ export default function ContactDetails(params) {
         </Grid>
         <Grid xs={12} item>
           <Input
-            value={message.contact}
-            onChange={(val) =>
-              setMessage((prev) => ({ ...prev, contact: val }))
-            }
-            label={Label.INPUT_LABEL.Contact}
-          />
-        </Grid>
-        <Grid xs={12} item>
-          <Input
+            error={onValidateSubject(message.address)}
             value={message.address}
             onChange={(val) =>
               setMessage((prev) => ({ ...prev, address: val }))
@@ -88,6 +122,7 @@ export default function ContactDetails(params) {
         </Grid>
         <Grid xs={12} item>
           <Input
+            error={onValidateMessage(message.message)}
             value={message.message}
             onChange={(val) =>
               setMessage((prev) => ({ ...prev, message: val }))
