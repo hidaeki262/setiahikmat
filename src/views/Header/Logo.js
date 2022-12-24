@@ -4,7 +4,7 @@ import { companyIcon } from "../../assets";
 
 export const Logo = () => {
   const onNavigate = () => {
-    const hostName = "http://localhost:3000/";
+    const hostName = "http://setiahikmat.com/";
     window.location.assign(hostName);
   };
 
