@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 
 const service_id = "service_fbezdeo";
 const template_id = "template_yhx45sc";
-const public_key = "Y2rPS3rgRvKJzJ-S_";
+const public_key = "1V1tYvziUw5xLzl8s";
 
 export default function ContactDetails(params) {
   const [message, setMessage] = React.useState({

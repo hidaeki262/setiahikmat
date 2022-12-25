@@ -19,7 +19,7 @@ export default function Contact() {
   const label = {
     title: "Let's Start a Conversation",
     address: "Company Address Selangor, Malaysia",
-    email: "Email Address",
+    email: "info@setiahikmat.com",
     contactNumber: "Contact Number",
   };
 
