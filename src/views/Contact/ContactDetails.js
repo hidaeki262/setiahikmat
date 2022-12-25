@@ -4,8 +4,8 @@ import { BasicButton, Input } from "../../components";
 import { Label } from "../../constants";
 import emailjs from "@emailjs/browser";
 
-const service_id = "service_t5yubu3";
-const template_id = "template_qt4tfo9";
+const service_id = "service_fbezdeo";
+const template_id = "template_yhx45sc";
 const public_key = "Y2rPS3rgRvKJzJ-S_";
 
 export default function ContactDetails(params) {
