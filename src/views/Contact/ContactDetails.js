@@ -4,9 +4,9 @@ import { BasicButton, Input } from "../../components";
 import { Label } from "../../constants";
 import emailjs from "@emailjs/browser";
 
-const service_id = "service_fbezdeo";
-const template_id = "template_yhx45sc";
-const public_key = "1V1tYvziUw5xLzl8s";
+const service_id = "service_opza26a";
+const template_id = "template_9g9ubtw";
+const public_key = "L_uCW3N6vPTk8uEUW";
 
 export default function ContactDetails(params) {
   const [message, setMessage] = React.useState({
