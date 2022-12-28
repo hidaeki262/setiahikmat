@@ -18,7 +18,7 @@ export default function Contact() {
 
   const label = {
     title: "Let's Start a Conversation",
-    address: "Company Address Selangor, Malaysia",
+    address: "No. 5-2A, Jalan 2/1A, Taman Kepong Indah, 52100 K.L, Malaysia",
     email: "info@setiahikmat.com",
     contactNumber: "Contact Number",
   };
