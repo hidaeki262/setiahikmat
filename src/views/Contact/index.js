@@ -20,7 +20,7 @@ export default function Contact() {
     title: "Let's Start a Conversation",
     address: "No. 5-2A, Jalan 2/1A, Taman Kepong Indah, 52100 K.L, Malaysia",
     email: "info@setiahikmat.com",
-    contactNumber: "Contact Number",
+    contactNumber: "03-8084 3586",
   };
 
   const SectionTitle = () => {
