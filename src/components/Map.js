@@ -26,7 +26,7 @@ const AddressMap = () => {
   const API_KEY = "AIzaSyDq4V7lU-EBoTtCIytlUXPzINPfQKNFUM0";
 
   const area =
-    "&q=Setia Hikmat Sdn Bhd";
+    "&q=Setia%20hikmat%20Sdn%20bhd,%205-2A,%20Jalan%202/1a,%20Taman%20Kepong%20Indah,%2052100%20Kuala%20Lumpur,%20Wilayah%20Persekutuan%20Kuala%20Lumpur";
   const src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}${area}`;
   const title = "Google map for the company";
 
