@@ -6,6 +6,7 @@ import { ElevationScroll } from "./components";
 import { AppBar } from "@mui/material";
 import { Label, PageHref } from "./constants";
 import MenuBackdrop from "./components/MenuBackdrop";
+import { Helmet } from "react-helmet";
 
 const options = [
   {
@@ -43,6 +44,13 @@ function App() {
   return (
     <React.Fragment>
       <Box>
+        <Helmet>
+          <title>{"Setia Hikmat"}</title>
+          <meta
+            name="description"
+            content="Setia Hikmat is a diversified firm that provides comprehensive services from building construction and renovation to customised projects"
+          />
+        </Helmet>
         <ElevationScroll>
           <AppBar
             position="fixed"

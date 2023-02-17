@@ -15,12 +15,13 @@ export default function About() {
   const label = {
     title: "Who We Are",
     about:
-      "Setia Hikmat is a diversified firm that provides comprehensive services from building construction and renovation to customised projects. We provide premium raw materials to cater to all your project needs. With our experienced expert team, we helped our clients achieve premium quality construction and renovation work cost-effectively.",
+      "It is a diversified firm that provides comprehensive services from building construction and renovation to customised projects. We provide premium raw materials to cater to all your project needs. With our experienced expert team, we helped our clients achieve premium quality construction and renovation work cost-effectively.",
+    companyName: "Setia Hikmat",
   };
 
   const TitleComponent = () => <Title title={label.title} />;
 
-  const DetailsComponent = () => <Details content={label.about} />;
+  const DetailsComponent = () => <Details content={label} />;
 
   const ImageComponent = () => <Image />;
 
