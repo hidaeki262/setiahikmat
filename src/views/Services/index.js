@@ -1,6 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Container, Grid, ImageListItem, Typography } from "@mui/material";
+import {
+  Container,
+  Grid,
+  ImageListItem,
+  Link,
+  Typography,
+} from "@mui/material";
 import { Title } from "../About/Title";
 import { Details } from "../About/Details";
 import { PageHref } from "../../constants";
@@ -25,18 +31,21 @@ export default function About() {
       content:
         "We are a one-stop renovation company that provides comprehensive construction services covering commercial and your sweet home.",
       label: "Construction",
+      link: "/construction",
     },
     {
       img: imageList_02,
       content:
         "With our growth in experience over the years, we provide an extensive range of renovation solutions to our clients.",
       label: "Renovation",
+      link: "/renovation",
     },
     {
       img: imageList_03,
       content:
         "As a leading raw materials provider, we aim to meet our client’s needs in all aspects of construction and renovation at the best rate and pricing.",
       label: "Customise Component",
+      link: "/customise",
     },
   ];
 
@@ -54,7 +63,7 @@ export default function About() {
   );
 
   const HoverComponent = (props) => {
-    const { img, content, label, index } = props;
+    const { img, content, label, link, index } = props;
     return (
       <ImageListItem>
         <Box
@@ -145,6 +154,20 @@ export default function About() {
               >
                 {label}
               </Typography>
+              <Link href={link}>
+                <Typography
+                  sx={{
+                    font: "normal normal 600 22px/30px Open Sans",
+                    "@media (max-width:768px)": {
+                      font: "normal normal 600 12px/18px Open Sans",
+                    },
+                    color: Colour.RED,
+                    textDecoration: "underline",
+                  }}
+                >
+                  Learn More
+                </Typography>
+              </Link>
             </Grid>
           </Grid>
         </Box>
