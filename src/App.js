@@ -1,12 +1,12 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import { Header, Home, Services, About, Contact } from "./views";
-import ScrollToTop, { scrollToHref } from "./components/ScrollToTop";
-import { ElevationScroll } from "./components";
+import { Helmet } from "react-helmet";
 import { AppBar } from "@mui/material";
 import { Label, PageHref } from "./constants";
+import { ElevationScroll } from "./components";
 import MenuBackdrop from "./components/MenuBackdrop";
-import { Helmet } from "react-helmet";
+import ScrollToTop, { scrollToHref } from "./components/ScrollToTop";
+import { Header, Home, Services, About, Contact } from "./views";
 
 const options = [
   {
@@ -32,25 +32,27 @@ const options = [
 ];
 
 function App() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+
   const handleClose = (event, href) => {
     scrollToHref(event, href);
     setOpen(false);
   };
+
   const handleToggle = () => {
     setOpen(!open);
   };
 
   return (
-    <React.Fragment>
+    <>
+      <Helmet>
+        <title>{"Setia Hikmat"}</title>
+        <meta
+          name="description"
+          content="Setia Hikmat is a diversified firm that provides comprehensive services from building construction and renovation to customised projects"
+        />
+      </Helmet>
       <Box>
-        <Helmet>
-          <title>{"Setia Hikmat"}</title>
-          <meta
-            name="description"
-            content="Setia Hikmat is a diversified firm that provides comprehensive services from building construction and renovation to customised projects"
-          />
-        </Helmet>
         <ElevationScroll>
           <AppBar
             position="fixed"
@@ -67,7 +69,7 @@ function App() {
         <ScrollToTop />
       </Box>
       <MenuBackdrop handleClose={handleClose} options={options} open={open} />
-    </React.Fragment>
+    </>
   );
 }
 
