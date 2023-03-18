@@ -7,15 +7,15 @@ import {
 } from "react-router-dom";
 import MainPage from "./views/MainPage";
 import ConstructionPage from "./views/Services/ConstructionPage";
+import RenovationPage from "./views/Services/RenovationPage";
 
 function RouteRules() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        {/* TODO: Add construction page */}
         <Route path="/construction" element={<ConstructionPage />} />
-        {/* TODO: Add renovation page */}
+        <Route path="/renovation" element={<RenovationPage />} />
         {/* TODO: Add customization page */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

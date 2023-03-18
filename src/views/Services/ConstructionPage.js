@@ -76,29 +76,26 @@ function DescriptionImageComponent({ items }) {
   );
   return (
     <Grid container spacing={2}>
-      {items.map((item, index) => {
-        console.log(index, index % 2 === 0);
-        return (
-          <React.Fragment key={index}>
-            {!matches ? (
-              <>
-                {renderDesc(item)}
-                {renderImg(item)}
-              </>
-            ) : index % 2 === 0 ? (
-              <>
-                {renderDesc(item)}
-                {renderImg(item)}
-              </>
-            ) : (
-              <>
-                {renderImg(item)}
-                {renderDesc(item)}
-              </>
-            )}
-          </React.Fragment>
-        );
-      })}
+      {items.map((item, index) => (
+        <React.Fragment key={index}>
+          {!matches ? (
+            <>
+              {renderDesc(item)}
+              {renderImg(item)}
+            </>
+          ) : index % 2 === 0 ? (
+            <>
+              {renderDesc(item)}
+              {renderImg(item)}
+            </>
+          ) : (
+            <>
+              {renderImg(item)}
+              {renderDesc(item)}
+            </>
+          )}
+        </React.Fragment>
+      ))}
     </Grid>
   );
 }
