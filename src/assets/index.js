@@ -16,6 +16,9 @@ const customization_01 = require("./customization_01.jpg");
 const customization_02 = require("./customization_02.jpg");
 const customization_03 = require("./customization_03.png");
 const customization_04 = require("./customization_04.jpg");
+const customization_05 = require("./customization_05.jpg");
+const customization_06 = require("./customization_06.jpg");
+const customization_07 = require("./customization_07.jpg");
 
 export {
   construction_worker,
@@ -36,4 +39,7 @@ export {
   customization_02,
   customization_03,
   customization_04,
+  customization_05,
+  customization_06,
+  customization_07,
 };
