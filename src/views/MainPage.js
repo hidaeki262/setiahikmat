@@ -54,7 +54,7 @@ export default function MainPage() {
             color="transparent"
             sx={{ backdropFilter: "blur(30px)" }}
           >
-            <Header handleToggle={handleToggle} />
+            <Header handleToggle={handleToggle} app_bars={options} />
           </AppBar>
         </ElevationScroll>
         <Home />

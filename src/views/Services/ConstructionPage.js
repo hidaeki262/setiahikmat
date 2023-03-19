@@ -1,4 +1,5 @@
 import {
+  AppBar,
   Box,
   Container,
   Grid,
@@ -6,7 +7,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import {
   construction_01,
   construction_02,
@@ -14,7 +15,25 @@ import {
   construction_04,
   imageList_01,
 } from "../../assets";
+import { ElevationScroll } from "../../components";
+import MenuBackdrop from "../../components/MenuBackdrop";
+import { scrollToHref } from "../../components/ScrollToTop";
+import { Label, PageHref } from "../../constants";
 import { Colour } from "../../constants/Colour";
+import Header from "../Header";
+
+const options = [
+  {
+    title: Label.APP_BAR_LABEL.HOME,
+    location: PageHref.PAGE_HREF.HOME,
+    id: PageHref.PAGE_ID.HOME,
+  },
+  {
+    title: Label.APP_BAR_LABEL.PRODUCTS,
+    location: PageHref.PAGE_HREF.PRODUCTS,
+    id: PageHref.PAGE_ID.PRODUCTS,
+  },
+];
 
 const items = [
   {
@@ -74,6 +93,7 @@ function DescriptionImageComponent({ items }) {
       </Typography>
     </Grid>
   );
+
   return (
     <Grid container spacing={2}>
       {items.map((item, index) => (
@@ -101,22 +121,43 @@ function DescriptionImageComponent({ items }) {
 }
 
 export default function ConstructionPage() {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event) => {
+    scrollToHref(event, null);
+    setOpen(false);
+  };
+
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
+      <ElevationScroll>
+        <AppBar
+          position="fixed"
+          color="transparent"
+          sx={{ backdropFilter: "blur(30px)" }}
+        >
+          <Header handleToggle={handleToggle} app_bars={options} />
+        </AppBar>
+      </ElevationScroll>
+
       <Box
         sx={{
           backgroundImage: `url(${imageList_01})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
-          padding: 5,
         }}
         mb={5}
+        mt={14}
+        pt={10}
+        pb={10}
       >
         <Container>
           <Grid container>
-            <Grid item xs={12} />
-            <Grid item xs={12} />
             <Grid item xs={12} justifyContent={"center"} mb={"46px"}>
               <Typography
                 sx={{
@@ -158,6 +199,7 @@ export default function ConstructionPage() {
           <DescriptionImageComponent items={items} />
         </Container>
       </Box>
+      <MenuBackdrop handleClose={handleClose} options={options} open={open} />
     </>
   );
 }

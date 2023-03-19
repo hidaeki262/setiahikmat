@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { AppBar, Box, Container, Grid, Typography } from "@mui/material";
+import { useState } from "react";
 import {
   customization_01,
   customization_02,
@@ -9,7 +10,12 @@ import {
   customization_07,
   imageList_03,
 } from "../../assets";
+import { ElevationScroll } from "../../components";
+import MenuBackdrop from "../../components/MenuBackdrop";
+import { scrollToHref } from "../../components/ScrollToTop";
+import { Label, PageHref } from "../../constants";
 import { Colour } from "../../constants/Colour";
+import Header from "../Header";
 
 const customiseImages = [
   customization_01,
@@ -21,23 +27,57 @@ const customiseImages = [
   customization_07,
 ];
 
+const options = [
+  {
+    title: Label.APP_BAR_LABEL.HOME,
+    location: PageHref.PAGE_HREF.HOME,
+    id: PageHref.PAGE_ID.HOME,
+  },
+  {
+    title: Label.APP_BAR_LABEL.PRODUCTS,
+    location: PageHref.PAGE_HREF.PRODUCTS,
+    id: PageHref.PAGE_ID.PRODUCTS,
+  },
+];
+
 export default function CustomisePage() {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event) => {
+    scrollToHref(event, null);
+    setOpen(false);
+  };
+
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
+      <ElevationScroll>
+        <AppBar
+          position="fixed"
+          color="transparent"
+          sx={{ backdropFilter: "blur(30px)" }}
+        >
+          <Header handleToggle={handleToggle} app_bars={options} />
+        </AppBar>
+      </ElevationScroll>
+
       <Box
         sx={{
           backgroundImage: `url(${imageList_03})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
-          padding: 5,
         }}
         mb={5}
+        mt={14}
+        pt={10}
+        pb={10}
       >
         <Container>
           <Grid container>
-            <Grid item xs={12} />
-            <Grid item xs={12} />
             <Grid item xs={12} justifyContent={"center"} mb={"46px"}>
               <Typography
                 sx={{
@@ -170,6 +210,7 @@ export default function CustomisePage() {
           </Grid>
         </Container>
       </Box>
+      <MenuBackdrop handleClose={handleClose} options={options} open={open} />
     </>
   );
 }

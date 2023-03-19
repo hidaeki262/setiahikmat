@@ -1,27 +1,67 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { AppBar, Box, Container, Grid, Typography } from "@mui/material";
 import {
   imageList_02,
   renovation_01,
   renovation_02,
   renovation_03,
 } from "../../assets";
-import React from "react";
+import React, { useState } from "react";
 import { Colour } from "../../constants/Colour";
+import { Label, PageHref } from "../../constants";
+import { ElevationScroll } from "../../components";
+import Header from "../Header";
+import { scrollToHref } from "../../components/ScrollToTop";
+import MenuBackdrop from "../../components/MenuBackdrop";
+
+const options = [
+  {
+    title: Label.APP_BAR_LABEL.HOME,
+    location: PageHref.PAGE_HREF.HOME,
+    id: PageHref.PAGE_ID.HOME,
+  },
+  {
+    title: Label.APP_BAR_LABEL.PRODUCTS,
+    location: PageHref.PAGE_HREF.PRODUCTS,
+    id: PageHref.PAGE_ID.PRODUCTS,
+  },
+];
 
 const renovationImages = [renovation_01, renovation_02, renovation_03];
 
 export default function RenovationPage() {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event) => {
+    scrollToHref(event, null);
+    setOpen(false);
+  };
+
+  const handleToggle = () => {
+    setOpen(!open);
+  };
   return (
     <>
+      <ElevationScroll>
+        <AppBar
+          position="fixed"
+          color="transparent"
+          sx={{ backdropFilter: "blur(30px)" }}
+        >
+          <Header handleToggle={handleToggle} app_bars={options} />
+        </AppBar>
+      </ElevationScroll>
+
       <Box
         sx={{
           backgroundImage: `url(${imageList_02})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
-          padding: 5,
         }}
         mb={5}
+        mt={14}
+        pt={10}
+        pb={10}
       >
         <Container>
           <Grid container>
@@ -159,6 +199,7 @@ export default function RenovationPage() {
           </Grid>
         </Container>
       </Box>
+      <MenuBackdrop handleClose={handleClose} options={options} open={open} />
     </>
   );
 }
