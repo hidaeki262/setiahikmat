@@ -92,7 +92,7 @@ function DescriptionImageComponent({ items }) {
             font: "normal normal 600 16px/22px Open Sans",
           },
           color: "#333",
-          textAlign: "left",
+          textAlign: "justify",
           height: "100%",
         }}
       >

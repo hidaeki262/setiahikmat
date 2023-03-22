@@ -124,7 +124,7 @@ export default function CustomisePage() {
                   "@media (max-width:768px)": {
                     font: "normal normal 300 16px/22px Open Sans",
                   },
-                  textAlign: "jusify",
+                  textAlign: "justify",
                   color: "#333",
                 }}
               >
@@ -140,7 +140,7 @@ export default function CustomisePage() {
                   "@media (max-width:768px)": {
                     font: "normal normal 300 16px/22px Open Sans",
                   },
-                  textAlign: "jusify",
+                  textAlign: "justify",
                   color: "#333",
                 }}
               >
@@ -156,7 +156,7 @@ export default function CustomisePage() {
                   "@media (max-width:768px)": {
                     font: "normal normal 300 16px/22px Open Sans",
                   },
-                  textAlign: "jusify",
+                  textAlign: "justify",
                   color: "#333",
                 }}
               >
@@ -172,7 +172,7 @@ export default function CustomisePage() {
                   "@media (max-width:768px)": {
                     font: "normal normal 300 16px/22px Open Sans",
                   },
-                  textAlign: "jusify",
+                  textAlign: "justify",
                   color: "#333",
                 }}
               >

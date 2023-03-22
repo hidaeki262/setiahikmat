@@ -21,7 +21,9 @@ export default function About() {
 
   const TitleComponent = () => <Title title={label.title} />;
 
-  const DetailsComponent = () => <Details content={label} />;
+  const DetailsComponent = () => (
+    <Details content={label} textAlign={"justify"} />
+  );
 
   const ImageComponent = () => <Image />;
 
