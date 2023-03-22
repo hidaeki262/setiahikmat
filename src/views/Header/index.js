@@ -111,6 +111,7 @@ export default function Header({ handleToggle, app_bars }) {
                   } else if (app_bar.title === Label.APP_BAR_LABEL.HOME) {
                     return (
                       <BasicButton
+                        key={index}
                         sx={{
                           color: "#333333",
                         }}

@@ -187,8 +187,8 @@ export default function RenovationPage() {
       <Box mb={5}>
         <Container>
           <Grid container justifyContent={"space-evenly"} rowSpacing={5}>
-            {renovationImages.map((image) => (
-              <Grid item>
+            {renovationImages.map((image, index) => (
+              <Grid key={index} item>
                 <img
                   src={image}
                   alt="Description"

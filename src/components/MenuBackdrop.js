@@ -4,9 +4,36 @@ import { BasicButton } from "../components";
 import { Backdrop, Grid } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { Logo } from "../views/Header/Logo";
+import { Label } from "../constants";
+
+const redirectLinks = [
+  {
+    label: "Construction",
+    path: "./construction",
+  },
+  {
+    label: "Renovation",
+    path: "./renovation",
+  },
+  {
+    label: "Customise",
+    path: "./customise",
+  },
+];
 
 export default function MenuBackdrop(props) {
   const { handleClose, options, open } = props;
+
+  const handleClickHome = (event) => {
+    event.preventDefault();
+    window.location.assign("./");
+  };
+
+  const handleRedirect = (event, route) => {
+    event.preventDefault();
+    window.location.assign(route);
+  };
+
   return (
     <Backdrop
       sx={{
@@ -14,7 +41,6 @@ export default function MenuBackdrop(props) {
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
       open={open}
-      onClick={handleClose}
     >
       <Box sx={{ margin: 5 }}>
         <Grid container rowSpacing={5}>
@@ -28,16 +54,46 @@ export default function MenuBackdrop(props) {
               fontSize="large"
             />
           </Grid>
-          {options.map((option, index) => (
-            <Grid key={index} xs={12} item>
-              <BasicButton
-                sx={{ color: "#FFCCBC", width: "100%" }}
-                key={index}
-                label={option.title}
-                onClick={(e) => handleClose(e, option.location)}
-              />
-            </Grid>
-          ))}
+          {options.map((option, index) => {
+            if (option.title === Label.APP_BAR_LABEL.HOME) {
+              return (
+                <Grid key={index} xs={12} item>
+                  <BasicButton
+                    sx={{ color: "#FFCCBC", width: "100%" }}
+                    key={index}
+                    label={option.title}
+                    onClick={handleClickHome}
+                  />
+                </Grid>
+              );
+            } else if (option.title === Label.APP_BAR_LABEL.PRODUCTS) {
+              return (
+                <React.Fragment key={index}>
+                  {redirectLinks.map((link, idx) => (
+                    <Grid key={idx} xs={12} item>
+                      <BasicButton
+                        sx={{ color: "#FFCCBC", width: "100%" }}
+                        key={idx}
+                        label={link.label}
+                        onClick={(e) => handleRedirect(e, link.path)}
+                      />
+                    </Grid>
+                  ))}
+                </React.Fragment>
+              );
+            } else {
+              return (
+                <Grid key={index} xs={12} item>
+                  <BasicButton
+                    sx={{ color: "#FFCCBC", width: "100%" }}
+                    key={index}
+                    label={option.title}
+                    onClick={(e) => handleClose(e, option.location)}
+                  />
+                </Grid>
+              );
+            }
+          })}
         </Grid>
       </Box>
     </Backdrop>

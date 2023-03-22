@@ -198,8 +198,8 @@ export default function CustomisePage() {
       <Box mb={5}>
         <Container>
           <Grid container justifyContent={"space-evenly"} rowSpacing={5}>
-            {customiseImages.map((image) => (
-              <Grid item>
+            {customiseImages.map((image, index) => (
+              <Grid key={index} item>
                 <img
                   src={image}
                   alt="Description"
