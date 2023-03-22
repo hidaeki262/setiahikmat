@@ -17,7 +17,7 @@ import {
 } from "../../assets";
 import { ElevationScroll } from "../../components";
 import MenuBackdrop from "../../components/MenuBackdrop";
-import { scrollToHref } from "../../components/ScrollToTop";
+import ScrollToTop, { scrollToHref } from "../../components/ScrollToTop";
 import { Label, PageHref } from "../../constants";
 import { Colour } from "../../constants/Colour";
 import Header from "../Header";
@@ -66,7 +66,14 @@ function DescriptionImageComponent({ items }) {
       <img
         src={item.imageSrc}
         alt="Description"
-        style={{ width: "300px", height: "200px" }}
+        style={{
+          width: "100%",
+          maxWidth: "300px",
+          height: "200px",
+          "@media (max-width: 768px)": {
+            maxWidth: "none",
+          },
+        }}
       />
     </Grid>
   );
@@ -199,6 +206,7 @@ export default function ConstructionPage() {
           <DescriptionImageComponent items={items} />
         </Container>
       </Box>
+      <ScrollToTop />
       <MenuBackdrop handleClose={handleClose} options={options} open={open} />
     </>
   );

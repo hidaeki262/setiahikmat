@@ -10,7 +10,7 @@ import { Colour } from "../../constants/Colour";
 import { Label, PageHref } from "../../constants";
 import { ElevationScroll } from "../../components";
 import Header from "../Header";
-import { scrollToHref } from "../../components/ScrollToTop";
+import ScrollToTop, { scrollToHref } from "../../components/ScrollToTop";
 import MenuBackdrop from "../../components/MenuBackdrop";
 
 const options = [
@@ -199,6 +199,7 @@ export default function RenovationPage() {
           </Grid>
         </Container>
       </Box>
+      <ScrollToTop />
       <MenuBackdrop handleClose={handleClose} options={options} open={open} />
     </>
   );
