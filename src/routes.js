@@ -12,7 +12,7 @@ import RenovationPage from "./views/Services/RenovationPage";
 
 function RouteRules() {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/construction" element={<ConstructionPage />} />
