@@ -12,12 +12,12 @@ import RenovationPage from "./views/Services/RenovationPage";
 
 function RouteRules() {
   return (
-    <Router basename="/setia_hikmat">
+    <Router basename="/">
       <Routes>
-        <Route path="/" element={<MainPage />} />
         <Route path="/construction" element={<ConstructionPage />} />
         <Route path="/renovation" element={<RenovationPage />} />
         <Route path="/customise" element={<CustomisePage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
