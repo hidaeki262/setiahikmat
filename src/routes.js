@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,8 +11,12 @@ import CustomisePage from "./views/Services/CustomisePage";
 import RenovationPage from "./views/Services/RenovationPage";
 
 function RouteRules() {
+  useEffect(() => {
+    console.log("RouteRules component rendered");
+  }, []);
+
   return (
-    <Router basename="/setia_hikmat">
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/construction" element={<ConstructionPage />} />
