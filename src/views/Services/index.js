@@ -31,21 +31,21 @@ export default function Services() {
       content:
         "We are a one-stop renovation company that provides comprehensive construction services covering commercial and your sweet home.",
       label: "Construction",
-      link: "/construction",
+      link: "/#/construction",
     },
     {
       img: imageList_02,
       content:
         "With our growth in experience over the years, we provide an extensive range of renovation solutions to our clients.",
       label: "Renovation",
-      link: "/renovation",
+      link: "/#/renovation",
     },
     {
       img: imageList_03,
       content:
         "As a leading raw materials provider, we aim to meet our client’s needs in all aspects of construction and renovation at the best rate and pricing.",
       label: "Customise Component",
-      link: "/customise",
+      link: "/#/customise",
     },
   ];
 
