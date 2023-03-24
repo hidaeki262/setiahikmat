@@ -83,7 +83,7 @@ export default function Header({ handleToggle, app_bars }) {
                               handleClose();
                             }}
                           >
-                            <a href={"./construction"} style={linkStyle}>
+                            <a href={"/#/construction"} style={linkStyle}>
                               Construction
                             </a>
                           </MenuItem>
@@ -92,7 +92,7 @@ export default function Header({ handleToggle, app_bars }) {
                               handleClose();
                             }}
                           >
-                            <a href={"./renovation"} style={linkStyle}>
+                            <a href={"/#/renovation"} style={linkStyle}>
                               Renovation
                             </a>
                           </MenuItem>
@@ -101,7 +101,7 @@ export default function Header({ handleToggle, app_bars }) {
                               handleClose();
                             }}
                           >
-                            <a href={"./customise"} style={linkStyle}>
+                            <a href={"/#/customise"} style={linkStyle}>
                               Customise
                             </a>
                           </MenuItem>
