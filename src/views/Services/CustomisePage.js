@@ -1,5 +1,5 @@
 import { AppBar, Box, Container, Grid, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   customization_01,
   customization_02,
@@ -51,6 +51,10 @@ export default function CustomisePage() {
   const handleToggle = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
