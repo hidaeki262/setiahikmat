@@ -9,15 +9,15 @@ import { Label } from "../constants";
 const redirectLinks = [
   {
     label: "Construction",
-    path: "./construction",
+    path: "/#/construction",
   },
   {
     label: "Renovation",
-    path: "./renovation",
+    path: "/#/renovation",
   },
   {
     label: "Customise",
-    path: "./customise",
+    path: "/#/customise",
   },
 ];
 

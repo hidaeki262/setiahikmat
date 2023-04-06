@@ -5,7 +5,7 @@ import {
   renovation_02,
   renovation_03,
 } from "../../assets";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Colour } from "../../constants/Colour";
 import { Label, PageHref } from "../../constants";
 import { ElevationScroll } from "../../components";
@@ -39,6 +39,11 @@ export default function RenovationPage() {
   const handleToggle = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <ElevationScroll>

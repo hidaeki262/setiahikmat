@@ -7,7 +7,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   construction_01,
   construction_02,
@@ -138,6 +138,10 @@ export default function ConstructionPage() {
   const handleToggle = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
